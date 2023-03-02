@@ -11,14 +11,30 @@
 		66531DA929B0F0E2009AA66B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66531DA829B0F0E2009AA66B /* ContentView.swift */; };
 		66531DAB29B0F0E4009AA66B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66531DAA29B0F0E4009AA66B /* Assets.xcassets */; };
 		66531DAE29B0F0E4009AA66B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66531DAD29B0F0E4009AA66B /* Preview Assets.xcassets */; };
+		6675BD0829B0F442000748E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6675BD0729B0F442000748E2 /* GoogleService-Info.plist */; };
+		667ADFDA29B0F7440062C6F0 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667ADFD929B0F7440062C6F0 /* AuthenticationView.swift */; };
+		667ADFDC29B0F7520062C6F0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667ADFDB29B0F7520062C6F0 /* LoginView.swift */; };
+		667ADFDE29B0F75F0062C6F0 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667ADFDD29B0F75F0062C6F0 /* SignUpView.swift */; };
+		667ADFE029B0F7740062C6F0 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667ADFDF29B0F7740062C6F0 /* ForgotPassword.swift */; };
+		667ADFE229B0F8110062C6F0 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667ADFE129B0F8110062C6F0 /* UserInfo.swift */; };
+		CDD596A62C28CBDDED62376B /* Pods_WaterWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 293B6BC40116789C39E08D3B /* Pods_WaterWatch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140D06774E21C4F1D5AFD2B4 /* Pods-WaterWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterWatch.release.xcconfig"; path = "Target Support Files/Pods-WaterWatch/Pods-WaterWatch.release.xcconfig"; sourceTree = "<group>"; };
+		293B6BC40116789C39E08D3B /* Pods_WaterWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66531DA329B0F0E2009AA66B /* WaterWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66531DA629B0F0E2009AA66B /* WaterWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWatchApp.swift; sourceTree = "<group>"; };
 		66531DA829B0F0E2009AA66B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		66531DAA29B0F0E4009AA66B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66531DAD29B0F0E4009AA66B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6675BD0729B0F442000748E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		667ADFD929B0F7440062C6F0 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		667ADFDB29B0F7520062C6F0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		667ADFDD29B0F75F0062C6F0 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		667ADFDF29B0F7740062C6F0 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		667ADFE129B0F8110062C6F0 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		DD49101D7B716E453B290B8C /* Pods-WaterWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterWatch.debug.xcconfig"; path = "Target Support Files/Pods-WaterWatch/Pods-WaterWatch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +42,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDD596A62C28CBDDED62376B /* Pods_WaterWatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		059B1C486AD7F7619276C2CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD49101D7B716E453B290B8C /* Pods-WaterWatch.debug.xcconfig */,
+				140D06774E21C4F1D5AFD2B4 /* Pods-WaterWatch.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		61FE6EF625266D4DD74EBCCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				293B6BC40116789C39E08D3B /* Pods_WaterWatch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		66531D9A29B0F0E2009AA66B = {
 			isa = PBXGroup;
 			children = (
 				66531DA529B0F0E2009AA66B /* WaterWatch */,
 				66531DA429B0F0E2009AA66B /* Products */,
+				059B1C486AD7F7619276C2CF /* Pods */,
+				61FE6EF625266D4DD74EBCCB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,9 +87,12 @@
 		66531DA529B0F0E2009AA66B /* WaterWatch */ = {
 			isa = PBXGroup;
 			children = (
+				6675BD0B29B0F4F1000748E2 /* Auth */,
+				6675BD0929B0F4BF000748E2 /* Views */,
+				6675BD0A29B0F4CB000748E2 /* Models */,
 				66531DA629B0F0E2009AA66B /* WaterWatchApp.swift */,
-				66531DA829B0F0E2009AA66B /* ContentView.swift */,
 				66531DAA29B0F0E4009AA66B /* Assets.xcassets */,
+				6675BD0729B0F442000748E2 /* GoogleService-Info.plist */,
 				66531DAC29B0F0E4009AA66B /* Preview Content */,
 			);
 			path = WaterWatch;
@@ -67,6 +106,33 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		6675BD0929B0F4BF000748E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				66531DA829B0F0E2009AA66B /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6675BD0A29B0F4CB000748E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				667ADFE129B0F8110062C6F0 /* UserInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6675BD0B29B0F4F1000748E2 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				667ADFD929B0F7440062C6F0 /* AuthenticationView.swift */,
+				667ADFDB29B0F7520062C6F0 /* LoginView.swift */,
+				667ADFDD29B0F75F0062C6F0 /* SignUpView.swift */,
+				667ADFDF29B0F7740062C6F0 /* ForgotPassword.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66531DB129B0F0E4009AA66B /* Build configuration list for PBXNativeTarget "WaterWatch" */;
 			buildPhases = (
+				4C5CD2CD4946B12A9B1935B0 /* [CP] Check Pods Manifest.lock */,
 				66531D9F29B0F0E2009AA66B /* Sources */,
 				66531DA029B0F0E2009AA66B /* Frameworks */,
 				66531DA129B0F0E2009AA66B /* Resources */,
+				6ABBEEA20EFAEE330C58680F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,10 +195,53 @@
 			files = (
 				66531DAE29B0F0E4009AA66B /* Preview Assets.xcassets in Resources */,
 				66531DAB29B0F0E4009AA66B /* Assets.xcassets in Resources */,
+				6675BD0829B0F442000748E2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C5CD2CD4946B12A9B1935B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WaterWatch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6ABBEEA20EFAEE330C58680F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WaterWatch/Pods-WaterWatch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WaterWatch/Pods-WaterWatch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WaterWatch/Pods-WaterWatch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		66531D9F29B0F0E2009AA66B /* Sources */ = {
@@ -138,7 +249,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				66531DA929B0F0E2009AA66B /* ContentView.swift in Sources */,
+				667ADFDE29B0F75F0062C6F0 /* SignUpView.swift in Sources */,
 				66531DA729B0F0E2009AA66B /* WaterWatchApp.swift in Sources */,
+				667ADFDC29B0F7520062C6F0 /* LoginView.swift in Sources */,
+				667ADFDA29B0F7440062C6F0 /* AuthenticationView.swift in Sources */,
+				667ADFE229B0F8110062C6F0 /* UserInfo.swift in Sources */,
+				667ADFE029B0F7740062C6F0 /* ForgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +377,7 @@
 		};
 		66531DB229B0F0E4009AA66B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD49101D7B716E453B290B8C /* Pods-WaterWatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -290,6 +407,7 @@
 		};
 		66531DB329B0F0E4009AA66B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 140D06774E21C4F1D5AFD2B4 /* Pods-WaterWatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
