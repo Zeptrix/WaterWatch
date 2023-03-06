@@ -7,10 +7,27 @@
 
 import SwiftUI
 
+enum ViewState{
+    case home, authentication, signUp, login, forgotPassword
+}
+
 struct ContentView: View {
+    
+    @State var viewState: ViewState = ViewState.authentication
+    @EnvironmentObject var userInfo: UserInfo
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        if viewState == .authentication && !userInfo.loggedIn {
+            AuthenticationView(viewState: $viewState)
+        } else if viewState == .login && !userInfo.loggedIn {
+            LoginView(viewState: $viewState)
+        } else if viewState == .signUp && !userInfo.loggedIn {
+            SignUpView(viewState: $viewState)
+        } else if viewState == .forgotPassword && !userInfo.loggedIn {
+            ForgotPassword(viewState: $viewState)
+        } else {
+            HomeView(viewState: $viewState)
+        }
     }
 }
 

@@ -1,13 +1,13 @@
 //
-//  LoginView.swift
+//  HomeView.swift
 //  WaterWatch
 //
-//  Created by Nathan Aronson (student LM) on 3/2/23.
+//  Created by Nathan Aronson (student LM) on 3/6/23.
 //
 
 import SwiftUI
 
-struct LoginView: View {
+struct HomeView: View {
     
     @Binding var viewState: ViewState
     
@@ -16,8 +16,8 @@ struct LoginView: View {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewState: Binding.constant(.login))
+        HomeView(viewState: Binding.constant(.home))
     }
 }

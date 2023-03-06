@@ -21,11 +21,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct WaterWatchApp: App {
   // register app delegate for Firebase setup
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+  @StateObject var userInfo: UserInfo = UserInfo()
+
 
   var body: some Scene {
     WindowGroup {
       NavigationView {
         ContentView()
+              .environmentObject(userInfo)
       }
     }
   }
