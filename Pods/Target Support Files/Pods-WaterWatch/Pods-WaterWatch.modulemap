@@ -1,0 +1,6 @@
+framework module Pods_WaterWatch {
+  umbrella header "Pods-WaterWatch-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -16,7 +16,8 @@
 		667ADFDC29B0F7520062C6F0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667ADFDB29B0F7520062C6F0 /* LoginView.swift */; };
 		667ADFDE29B0F75F0062C6F0 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667ADFDD29B0F75F0062C6F0 /* SignUpView.swift */; };
 		667ADFE029B0F7740062C6F0 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667ADFDF29B0F7740062C6F0 /* ForgotPassword.swift */; };
-		667ADFE229B0F8110062C6F0 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667ADFE129B0F8110062C6F0 /* UserInfo.swift */; };
+		66D84E7529B776EE000B6D4C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D84E7429B776EE000B6D4C /* HomeView.swift */; };
+		66D84E7729B776F7000B6D4C /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D84E7629B776F7000B6D4C /* UserInfo.swift */; };
 		CDD596A62C28CBDDED62376B /* Pods_WaterWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 293B6BC40116789C39E08D3B /* Pods_WaterWatch.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +34,8 @@
 		667ADFDB29B0F7520062C6F0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		667ADFDD29B0F75F0062C6F0 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		667ADFDF29B0F7740062C6F0 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
-		667ADFE129B0F8110062C6F0 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		66D84E7429B776EE000B6D4C /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		66D84E7629B776F7000B6D4C /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = WaterWatch/UserInfo.swift; sourceTree = SOURCE_ROOT; };
 		DD49101D7B716E453B290B8C /* Pods-WaterWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterWatch.debug.xcconfig"; path = "Target Support Files/Pods-WaterWatch/Pods-WaterWatch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				66531DA829B0F0E2009AA66B /* ContentView.swift */,
+				66D84E7429B776EE000B6D4C /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,7 +120,7 @@
 		6675BD0A29B0F4CB000748E2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				667ADFE129B0F8110062C6F0 /* UserInfo.swift */,
+				66D84E7629B776F7000B6D4C /* UserInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,7 +256,8 @@
 				66531DA729B0F0E2009AA66B /* WaterWatchApp.swift in Sources */,
 				667ADFDC29B0F7520062C6F0 /* LoginView.swift in Sources */,
 				667ADFDA29B0F7440062C6F0 /* AuthenticationView.swift in Sources */,
-				667ADFE229B0F8110062C6F0 /* UserInfo.swift in Sources */,
+				66D84E7529B776EE000B6D4C /* HomeView.swift in Sources */,
+				66D84E7729B776F7000B6D4C /* UserInfo.swift in Sources */,
 				667ADFE029B0F7740062C6F0 /* ForgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
