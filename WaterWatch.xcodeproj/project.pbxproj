@@ -18,6 +18,7 @@
 		667ADFE029B0F7740062C6F0 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667ADFDF29B0F7740062C6F0 /* ForgotPassword.swift */; };
 		66D84E7529B776EE000B6D4C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D84E7429B776EE000B6D4C /* HomeView.swift */; };
 		66D84E7729B776F7000B6D4C /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D84E7629B776F7000B6D4C /* UserInfo.swift */; };
+		66D84E7929B7801B000B6D4C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D84E7829B7801B000B6D4C /* Constants.swift */; };
 		CDD596A62C28CBDDED62376B /* Pods_WaterWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 293B6BC40116789C39E08D3B /* Pods_WaterWatch.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		667ADFDF29B0F7740062C6F0 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		66D84E7429B776EE000B6D4C /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		66D84E7629B776F7000B6D4C /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = WaterWatch/UserInfo.swift; sourceTree = SOURCE_ROOT; };
+		66D84E7829B7801B000B6D4C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DD49101D7B716E453B290B8C /* Pods-WaterWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterWatch.debug.xcconfig"; path = "Target Support Files/Pods-WaterWatch/Pods-WaterWatch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				66D84E7629B776F7000B6D4C /* UserInfo.swift */,
+				66D84E7829B7801B000B6D4C /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				66D84E7529B776EE000B6D4C /* HomeView.swift in Sources */,
 				66D84E7729B776F7000B6D4C /* UserInfo.swift in Sources */,
 				667ADFE029B0F7740062C6F0 /* ForgotPassword.swift in Sources */,
+				66D84E7929B7801B000B6D4C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

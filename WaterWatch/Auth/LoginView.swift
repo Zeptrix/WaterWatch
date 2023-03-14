@@ -6,13 +6,93 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct LoginView: View {
     
+    @EnvironmentObject var userInfo: UserInfo
     @Binding var viewState: ViewState
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            VStack() {
+                Text("WaterWatch Login")
+                    .font(.largeTitle).foregroundColor(Color.white)
+                    .padding([.top, .bottom], 40)
+                    .shadow(radius: 10.0, x: 20, y: 10)
+                
+                Image("WaterWatchLogo")
+                    .resizable()
+                    .frame(width: 250, height: 250)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                    .shadow(radius: 10.0, x: 20, y: 10)
+                    .padding(.bottom, 50)
+                
+                VStack(alignment: .leading, spacing: 15) {
+                    TextField("Email or Username", text: $userInfo.username)
+                        .padding()
+                        .background(Color.themeTextField)
+                        .cornerRadius(20.0)
+                        .shadow(radius: 10.0, x: 20, y: 10)
+                    
+                    SecureField("Password", text: $userInfo.password)
+                        .padding()
+                        .background(Color.themeTextField)
+                        .cornerRadius(20.0)
+                        .shadow(radius: 10.0, x: 20, y: 10)
+                }.padding([.leading, .trailing], 27.5)
+                
+                Button(action: {
+                    Auth.auth().signIn(withEmail: userInfo.username, password: userInfo.password) { user, error in
+                        if let _ = user {
+                            userInfo.loggedIn = true
+                            viewState = .home
+                        } else {
+                            print(error?.localizedDescription ?? "")
+                        }
+                    }
+                }) {
+                    Text("Sign In")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(Color.green)
+                        .cornerRadius(15.0)
+                        .shadow(radius: 10.0, x: 20, y: 10)
+                }.padding(.top, 50)
+                
+                Spacer()
+                Button(action: {
+                    viewState = .forgotPassword
+                }) {
+                    Text("Forgot Password?")
+                        .foregroundColor(.white)
+                }
+            }
+            .background(
+                LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.all))
+            VStack {
+                HStack {
+                    Button(action: {
+                        viewState = .authentication
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.white)
+                    }
+                    Spacer()
+                }.padding(.leading, 20)
+                Spacer()
+            }
+        }
+    }
+}
+
+extension Color {
+    static var themeTextField: Color {
+        return Color(red: 220.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, opacity: 1.0)
     }
 }
 
