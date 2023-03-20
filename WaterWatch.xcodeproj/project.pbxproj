@@ -27,6 +27,8 @@
 /* Begin PBXFileReference section */
 		140D06774E21C4F1D5AFD2B4 /* Pods-WaterWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterWatch.release.xcconfig"; path = "Target Support Files/Pods-WaterWatch/Pods-WaterWatch.release.xcconfig"; sourceTree = "<group>"; };
 		293B6BC40116789C39E08D3B /* Pods_WaterWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48E58DC729C8957A00D68A82 /* SurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyView.swift; sourceTree = "<group>"; };
+		48E58DC929C895D500D68A82 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		66531DA329B0F0E2009AA66B /* WaterWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66531DA629B0F0E2009AA66B /* WaterWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWatchApp.swift; sourceTree = "<group>"; };
 		66531DA829B0F0E2009AA66B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,8 @@
 			children = (
 				66531DA829B0F0E2009AA66B /* ContentView.swift */,
 				66D84E7429B776EE000B6D4C /* HomeView.swift */,
+				48E58DC729C8957A00D68A82 /* SurveyView.swift */,
+				48E58DC929C895D500D68A82 /* CheckBox.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,11 +263,13 @@
 				66531DA929B0F0E2009AA66B /* ContentView.swift in Sources */,
 				667ADFDE29B0F75F0062C6F0 /* SignUpView.swift in Sources */,
 				66531DA729B0F0E2009AA66B /* WaterWatchApp.swift in Sources */,
+				48E58DCA29C895D500D68A82 /* CheckBox.swift in Sources */,
 				667ADFDC29B0F7520062C6F0 /* LoginView.swift in Sources */,
 				667ADFDA29B0F7440062C6F0 /* AuthenticationView.swift in Sources */,
 				66D84E7529B776EE000B6D4C /* HomeView.swift in Sources */,
 				66D84E7729B776F7000B6D4C /* UserInfo.swift in Sources */,
 				667ADFE029B0F7740062C6F0 /* ForgotPassword.swift in Sources */,
+				48E58DC829C8957A00D68A82 /* SurveyView.swift in Sources */,
 				66D84E7929B7801B000B6D4C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
