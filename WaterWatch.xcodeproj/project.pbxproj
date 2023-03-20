@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48E58DC829C8957A00D68A82 /* SurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58DC729C8957A00D68A82 /* SurveyView.swift */; };
+		48E58DCA29C895D500D68A82 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58DC929C895D500D68A82 /* CheckBox.swift */; };
 		66531DA729B0F0E2009AA66B /* WaterWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66531DA629B0F0E2009AA66B /* WaterWatchApp.swift */; };
 		66531DA929B0F0E2009AA66B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66531DA829B0F0E2009AA66B /* ContentView.swift */; };
 		66531DAB29B0F0E4009AA66B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66531DAA29B0F0E4009AA66B /* Assets.xcassets */; };
