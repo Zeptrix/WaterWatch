@@ -63,6 +63,8 @@ struct ForgotPassword: View {
                         .background(Color.green)
                         .cornerRadius(15.0)
                         .shadow(radius: 10.0, x: 20, y: 10)
+                        .textInputAutocapitalization(.never)
+                        .disableAutocorrection(true)
                 }.padding(.top, 30)
                 Spacer()
             }

@@ -11,11 +11,11 @@ import Combine
 
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-
+    
     private let locationManager = CLLocationManager()
     @Published var locationStatus: CLAuthorizationStatus?
     @Published var lastLocation: CLLocation?
-
+    
     override init() {
         super.init()
         locationManager.delegate = self
@@ -38,7 +38,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         default: return "unknown"
         }
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         locationStatus = status
         print(#function, statusString)
