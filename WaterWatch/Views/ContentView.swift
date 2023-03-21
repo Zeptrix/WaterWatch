@@ -15,6 +15,8 @@ struct ContentView: View {
     
     @State var viewState: ViewState = ViewState.authentication
     @EnvironmentObject var userInfo: UserInfo
+    @State var water_mL = 0
+
     
     var body: some View {
         if viewState == .authentication && !userInfo.loggedIn {
