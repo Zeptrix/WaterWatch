@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42C3382D29C9F852008EF4AB /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C3382C29C9F852008EF4AB /* FetchData.swift */; };
 		66531DA729B0F0E2009AA66B /* WaterWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66531DA629B0F0E2009AA66B /* WaterWatchApp.swift */; };
 		66531DA929B0F0E2009AA66B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66531DA829B0F0E2009AA66B /* ContentView.swift */; };
 		66531DAB29B0F0E4009AA66B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66531DAA29B0F0E4009AA66B /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		140D06774E21C4F1D5AFD2B4 /* Pods-WaterWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterWatch.release.xcconfig"; path = "Target Support Files/Pods-WaterWatch/Pods-WaterWatch.release.xcconfig"; sourceTree = "<group>"; };
 		293B6BC40116789C39E08D3B /* Pods_WaterWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42C3382C29C9F852008EF4AB /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		66531DA329B0F0E2009AA66B /* WaterWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66531DA629B0F0E2009AA66B /* WaterWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWatchApp.swift; sourceTree = "<group>"; };
 		66531DA829B0F0E2009AA66B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				66D84E7629B776F7000B6D4C /* UserInfo.swift */,
 				66D84E7829B7801B000B6D4C /* Constants.swift */,
+				42C3382C29C9F852008EF4AB /* FetchData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			files = (
 				66531DA929B0F0E2009AA66B /* ContentView.swift in Sources */,
 				667ADFDE29B0F75F0062C6F0 /* SignUpView.swift in Sources */,
+				42C3382D29C9F852008EF4AB /* FetchData.swift in Sources */,
 				66531DA729B0F0E2009AA66B /* WaterWatchApp.swift in Sources */,
 				667ADFDC29B0F7520062C6F0 /* LoginView.swift in Sources */,
 				667ADFDA29B0F7440062C6F0 /* AuthenticationView.swift in Sources */,
