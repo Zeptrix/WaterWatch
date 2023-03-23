@@ -35,6 +35,8 @@ struct SignUpView: View {
                         .background(Color.themeTextField)
                         .cornerRadius(20.0)
                         .shadow(radius: 10.0, x: 20, y: 10)
+                        .textInputAutocapitalization(.never)
+                        .disableAutocorrection(true)
                     
                     SecureField("Password", text: $userInfo.password)
                         .padding()
@@ -65,7 +67,7 @@ struct SignUpView: View {
                 Spacer()
             }
             .background(
-                LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: [.wateryBlue, .sandyOrange]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all))
             VStack {
                 HStack {

@@ -28,7 +28,7 @@ struct ContentView: View {
         } else if viewState == .forgotPassword && !userInfo.loggedIn {
             ForgotPassword(viewState: $viewState)
         } else {
-            HomeView(viewState: $viewState)
+            HomeView(water_mL: $water_mL, viewState: $viewState)
         }
     }
 }
