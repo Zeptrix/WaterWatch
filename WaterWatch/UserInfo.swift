@@ -13,9 +13,19 @@ class UserInfo: ObservableObject {
     @Published var password: String
     @Published var loggedIn: Bool = false
     
-    init(username: String = "", password: String = "") {
+    @Published var age: Double
+    @Published var weight: Double
+    @Published var activity: Double
+
+    
+    init(username: String = "", password: String = "", age: Double = 0.0, weight: Double = 0.0, activity: Double = 0.0){
+
         self.username = username
         self.password = password
+        
+        self.age = age
+        self.weight = weight
+        self.activity = activity
         
         Auth.auth().addStateDidChangeListener { _, user in
             guard let user = user else {return}
