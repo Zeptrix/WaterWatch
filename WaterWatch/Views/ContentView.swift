@@ -15,6 +15,7 @@ struct ContentView: View {
     
     @State var viewState: ViewState = ViewState.authentication
     @EnvironmentObject var userInfo: UserInfo
+    @StateObject var data = FetchData()
     
     var body: some View {
         if viewState == .authentication && !userInfo.loggedIn {
