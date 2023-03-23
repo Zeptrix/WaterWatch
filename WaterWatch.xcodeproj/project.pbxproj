@@ -130,6 +130,7 @@
 			children = (
 				66D84E7629B776F7000B6D4C /* UserInfo.swift */,
 				66D84E7829B7801B000B6D4C /* Constants.swift */,
+				4201DF1729C895EA00B65CDB /* LocationManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,6 +263,7 @@
 			files = (
 				66531DA929B0F0E2009AA66B /* ContentView.swift in Sources */,
 				667ADFDE29B0F75F0062C6F0 /* SignUpView.swift in Sources */,
+				4201DF1829C895EA00B65CDB /* LocationManager.swift in Sources */,
 				66531DA729B0F0E2009AA66B /* WaterWatchApp.swift in Sources */,
 				48E58DCA29C895D500D68A82 /* CheckBox.swift in Sources */,
 				667ADFDC29B0F7520062C6F0 /* LoginView.swift in Sources */,
