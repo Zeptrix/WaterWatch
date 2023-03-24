@@ -30,18 +30,7 @@ struct SurveryView: View {
                     .foregroundColor(.red)
                     .font(.headline)
                 
-                Button(action:{
-                    userInfo.age = Double(textFieldAge) ?? 0.0
-                }, label: {
-                    Text("Save".uppercased())
-                        .frame(maxWidth: . infinity)
-                        .padding()
-                        .background(Color.blue.cornerRadius(10))
-                        .foregroundColor(.white)
-                        .font(.headline)
-                    
-                    
-                })
+              
                 Spacer()
                 //slider
                 Slider(
@@ -55,7 +44,36 @@ struct SurveryView: View {
                     in: 0...360, step: 15)
                 Text("\(userInfo.activity, specifier: "%.0001f") avg daily minutes of actvity")
                 
-                
+                Button {
+                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        }
+                    }
+                } label: {
+                    ZStack{
+                        Rectangle()
+                            .padding()
+                            .cornerRadius(60)
+                            .foregroundColor(Color.green)
+                        Text("Enable Notifications")
+                            .padding()
+                            .foregroundColor(Color.white)
+                    }
+                   
+                }
+                Button(action:{
+                    userInfo.age = Double(textFieldAge) ?? 0.0
+                }, label: {
+                    Text("Save".uppercased())
+                        .frame(maxWidth: . infinity)
+                        .padding()
+                        .background(Color.blue.cornerRadius(10))
+                        .foregroundColor(.white)
+                        .font(.headline)
+                    
+                    
+                })
             }
         }
         

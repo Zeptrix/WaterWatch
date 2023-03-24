@@ -13,7 +13,9 @@ struct HomeView: View {
     
     @Binding var viewState: ViewState
     @EnvironmentObject var userInfo: UserInfo
-    var waterRequirement_mL-water_mL: Double = 0.0
+    @Binding var water_mL: Int
+    var waterRequirement_mL = 300
+    var drinkSize_mL = 100
     
     var body: some View {
         ZStack{
@@ -92,7 +94,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(viewState: Binding.constant(.home))
+        HomeView(viewState: Binding.constant(.home), water_mL: Binding.constant(0))
     }
 }
 */

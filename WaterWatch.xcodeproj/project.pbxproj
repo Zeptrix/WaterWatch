@@ -7,14 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		489534C929CDD90800730177 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489534C829CDD90800730177 /* WidgetKit.framework */; };
-		489534CB29CDD90800730177 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489534CA29CDD90800730177 /* SwiftUI.framework */; };
-		489534CE29CDD90800730177 /* WaterWatchWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489534CD29CDD90800730177 /* WaterWatchWidget.swift */; };
-		489534D129CDD90B00730177 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 489534D029CDD90B00730177 /* Assets.xcassets */; };
-		489534D329CDD90B00730177 /* WaterWatchWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 489534CF29CDD90800730177 /* WaterWatchWidget.intentdefinition */; };
-		489534D429CDD90B00730177 /* WaterWatchWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 489534CF29CDD90800730177 /* WaterWatchWidget.intentdefinition */; };
-		489534D729CDD90B00730177 /* WaterWatchWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 489534C729CDD90800730177 /* WaterWatchWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		48A3A35629CC77CF0081B4BF /* WaterIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3A35529CC77CF0081B4BF /* WaterIntake.swift */; };
+		42561AD029CDDB8000DB675D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42561ACF29CDDB8000DB675D /* LocationManager.swift */; };
+		42561AD229CDDBC800DB675D /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42561AD129CDDBC800DB675D /* FetchData.swift */; };
 		48E58DC829C8957A00D68A82 /* SurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58DC729C8957A00D68A82 /* SurveyView.swift */; };
 		48E58DCA29C895D500D68A82 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58DC929C895D500D68A82 /* CheckBox.swift */; };
 		66531DA729B0F0E2009AA66B /* WaterWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66531DA629B0F0E2009AA66B /* WaterWatchApp.swift */; };
@@ -59,14 +53,8 @@
 /* Begin PBXFileReference section */
 		140D06774E21C4F1D5AFD2B4 /* Pods-WaterWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterWatch.release.xcconfig"; path = "Target Support Files/Pods-WaterWatch/Pods-WaterWatch.release.xcconfig"; sourceTree = "<group>"; };
 		293B6BC40116789C39E08D3B /* Pods_WaterWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		489534C729CDD90800730177 /* WaterWatchWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WaterWatchWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		489534C829CDD90800730177 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
-		489534CA29CDD90800730177 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		489534CD29CDD90800730177 /* WaterWatchWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWatchWidget.swift; sourceTree = "<group>"; };
-		489534CF29CDD90800730177 /* WaterWatchWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = WaterWatchWidget.intentdefinition; sourceTree = "<group>"; };
-		489534D029CDD90B00730177 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		489534D229CDD90B00730177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48A3A35529CC77CF0081B4BF /* WaterIntake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntake.swift; sourceTree = "<group>"; };
+		42561ACF29CDDB8000DB675D /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		42561AD129CDDBC800DB675D /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		48E58DC729C8957A00D68A82 /* SurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyView.swift; sourceTree = "<group>"; };
 		48E58DC929C895D500D68A82 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		66531DA329B0F0E2009AA66B /* WaterWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,10 +179,10 @@
 		6675BD0A29B0F4CB000748E2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				66531DA629B0F0E2009AA66B /* WaterWatchApp.swift */,
-				66D84E7829B7801B000B6D4C /* Constants.swift */,
 				66D84E7629B776F7000B6D4C /* UserInfo.swift */,
-				48A3A35529CC77CF0081B4BF /* WaterIntake.swift */,
+				42561ACF29CDDB8000DB675D /* LocationManager.swift */,
+				66D84E7829B7801B000B6D4C /* Constants.swift */,
+				42561AD129CDDBC800DB675D /* FetchData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -374,7 +362,9 @@
 				667ADFDA29B0F7440062C6F0 /* AuthenticationView.swift in Sources */,
 				66D84E7529B776EE000B6D4C /* HomeView.swift in Sources */,
 				66D84E7729B776F7000B6D4C /* UserInfo.swift in Sources */,
+				42561AD029CDDB8000DB675D /* LocationManager.swift in Sources */,
 				667ADFE029B0F7740062C6F0 /* ForgotPassword.swift in Sources */,
+				42561AD229CDDBC800DB675D /* FetchData.swift in Sources */,
 				48E58DC829C8957A00D68A82 /* SurveyView.swift in Sources */,
 				66D84E7929B7801B000B6D4C /* Constants.swift in Sources */,
 				48A3A35629CC77CF0081B4BF /* WaterIntake.swift in Sources */,
