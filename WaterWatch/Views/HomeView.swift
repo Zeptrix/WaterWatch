@@ -4,7 +4,7 @@
 //
 //  Created by Nathan Aronson (student LM) on 3/7/23.
 //
-
+/*
 import SwiftUI
 import Firebase
 import FirebaseAuth
@@ -13,6 +13,7 @@ struct HomeView: View {
     
     @Binding var viewState: ViewState
     @EnvironmentObject var userInfo: UserInfo
+    var waterRequirement_mL-water_mL: Double = 0.0
     
     var body: some View {
         ZStack{
@@ -87,10 +88,11 @@ struct HomeView: View {
             }
         }
     }
-}
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(viewState: Binding.constant(.home))
     }
 }
+*/
