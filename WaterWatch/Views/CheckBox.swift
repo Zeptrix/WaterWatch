@@ -7,37 +7,27 @@
 import SwiftUI
 struct CheckBox: View {
     
+    @StateObject var userInfo: UserInfo = UserInfo()
     @State var isChecked1:Bool = false
     @State var isChecked2:Bool = false
     @State var isChecked3:Bool = false
-    @State var StringImage : String = ""
     
     var title1:String
     var title2:String
+    var title3:String
     
     func toggle1(){
         isChecked1 = !isChecked1
-        if StringImage.count < 10{
-            StringImage += title1
-        }
-        else if isChecked1 == true && isChecked2 == false{
-            StringImage = title1
-        }
-        else{
-            StringImage = title2
-        }
+        userInfo.gender = title1
    }
     func toggle2(){
         isChecked2 = !isChecked2
-        if StringImage.count < 10{
-            StringImage += title2
-        }
-        else if isChecked1 == false && isChecked2 == true{
-            StringImage = title2
-        }
-        else{
-            StringImage = title1
-        }
+        userInfo.gender = title2
+      
+   }
+    func toggle3(){
+        isChecked3 = !isChecked3
+        userInfo.gender = title3
    }
    var body: some View {
        
@@ -45,6 +35,7 @@ struct CheckBox: View {
            HStack{
                Text(title1)
                Image(systemName: isChecked1 ? "checkmark.square": "square")
+      
            }
        }
      
@@ -54,21 +45,25 @@ struct CheckBox: View {
                Image(systemName: isChecked2 ? "checkmark.square": "square")
            }
        }
+      
+       Button(action: toggle3){
+           HStack{
+               Text(title3)
+               Image(systemName: isChecked3 ? "checkmark.square": "square")
+           }
+       }
        
-       if isChecked1 == true{
-           Image(StringImage)
-       }
-       else if isChecked2 == true{
-           Image(StringImage)
-       }
       
      
    }
 }
 struct CheckBox_Previews: PreviewProvider {
     static var previews: some View {
-        CheckBox(title1: "", title2: "")
+        CheckBox(title1: "", title2: "", title3: "")
+        
 }
 }
+
+
 
 

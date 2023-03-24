@@ -4,7 +4,7 @@
 //
 //  Created by Nathan Aronson (student LM) on 3/7/23.
 //
-
+/*
 import SwiftUI
 import Firebase
 import FirebaseAuth
@@ -97,3 +97,4 @@ struct HomeView_Previews: PreviewProvider {
         HomeView(viewState: Binding.constant(.home), water_mL: Binding.constant(0))
     }
 }
+*/
