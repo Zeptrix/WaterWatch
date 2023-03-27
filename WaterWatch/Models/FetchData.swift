@@ -8,7 +8,7 @@ import Foundation
 class FetchData: ObservableObject{
     @Published var response = Response()
     var locationManager = LocationManager()
-    var latitude: String{
+        var latitude: String{
         return "\(locationManager.lastLocation?.coordinate.latitude ?? 39.9526)"
     }
     var longitude: String {
