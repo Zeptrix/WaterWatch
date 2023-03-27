@@ -4,18 +4,18 @@
 //
 //  Created by Nathan Aronson (student LM) on 3/7/23.
 //
-/*
+
 import SwiftUI
 import Firebase
 import FirebaseAuth
 
 struct HomeView: View {
-    
-    @Binding var viewState: ViewState
-    @EnvironmentObject var userInfo: UserInfo
     @Binding var water_mL: Int
     var waterRequirement_mL = 300
     var drinkSize_mL = 100
+    
+    @Binding var viewState: ViewState
+    @EnvironmentObject var userInfo: UserInfo
     
     var body: some View {
         ZStack{
@@ -35,45 +35,44 @@ struct HomeView: View {
                     .edgesIgnoringSafeArea(.all)
                     .aspectRatio(contentMode: .fill)
             }
-        
-        VStack {
-            Spacer()
-                  if waterRequirement_mL-water_mL > 0{
-                      Text("\(waterRequirement_mL-water_mL) mL remaining today")
-                          .padding()
-                  } else if waterRequirement_mL-water_mL <= 0{
-                      Text("All necessary water has been consumed!")
-                          .padding()
-                  }
-                  
-                  Spacer()
-                  Button{
-                      water_mL += drinkSize_mL
-                  } label: {
-                      if waterRequirement_mL-water_mL > 0{
-                          ZStack{
-                              Rectangle()
-                                  .foregroundColor(Color.green)
-                                  .cornerRadius(10)
-                                  .padding()
-                              Text("Drink")
-                                  .foregroundColor(Color.white)
-                          }
-                      } else {
-                          ZStack{
-                              Rectangle()
-                                  .foregroundColor(Color.gray)
-                                  .cornerRadius(10)
-                                  .padding()
-                              Text("Drink")
-                                  .foregroundColor(Color.white)
-                          }
-                          
-                      }
-                  }
-                  Spacer()
-        }}
-
+            
+            VStack {
+                Spacer()
+                if waterRequirement_mL-water_mL > 0{
+                    Text("\(waterRequirement_mL-water_mL) mL remaining today")
+                        .padding()
+                } else if waterRequirement_mL-water_mL <= 0{
+                    Text("All necessary water has been consumed!")
+                        .padding()
+                }
+                
+                Spacer()
+                Button{
+                    water_mL += drinkSize_mL
+                } label: {
+                    if waterRequirement_mL-water_mL > 0{
+                        ZStack{
+                            Rectangle()
+                                .foregroundColor(Color.green)
+                                .cornerRadius(10)
+                                .padding()
+                            Text("Drink")
+                                .foregroundColor(Color.white)
+                        }
+                    } else {
+                        ZStack{
+                            Rectangle()
+                                .foregroundColor(Color.gray)
+                                .cornerRadius(10)
+                                .padding()
+                            Text("Drink")
+                                .foregroundColor(Color.white)
+                        }
+                        
+                    }
+                }
+                Spacer()
+            }
             Button(action: {
                 try! Auth.auth().signOut()
                 userInfo.loggedIn = false
@@ -90,11 +89,10 @@ struct HomeView: View {
             }
         }
     }
-
+}
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(viewState: Binding.constant(.home), water_mL: Binding.constant(0))
+        HomeView(water_mL: Binding.constant(0), viewState: Binding.constant(.home))
     }
 }
-*/

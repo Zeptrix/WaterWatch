@@ -9,7 +9,7 @@ import SwiftUI
 import UserNotifications
 
 enum ViewState{
-    case home, authentication, signUp, login, forgotPassword
+    case home, authentication, signUp, login, forgotPassword, settings
 }
 
 struct ContentView: View {
@@ -19,20 +19,30 @@ struct ContentView: View {
     @State var water_mL = 0
     var remindersPerDay = 1440
     var drinkSize = 50
-
+    
     
     var body: some View {
-//        if viewState == .authentication && !userInfo.loggedIn {
-//            AuthenticationView(viewState: $viewState)
-//        } else if viewState == .login && !userInfo.loggedIn {
-//            LoginView(viewState: $viewState)
-//        } else if viewState == .signUp && !userInfo.loggedIn {
-//            SignUpView(viewState: $viewState)
-//        } else if viewState == .forgotPassword && !userInfo.loggedIn {
-//            ForgotPassword(viewState: $viewState)
-//        } else {
-//            HomeView(viewState: $viewState)
-//        }
+        if viewState == .authentication && !userInfo.loggedIn {
+            AuthenticationView(viewState: $viewState)
+        } else if viewState == .login && !userInfo.loggedIn {
+            LoginView(viewState: $viewState)
+        } else if viewState == .signUp && !userInfo.loggedIn {
+            SignUpView(viewState: $viewState)
+        } else if viewState == .forgotPassword && !userInfo.loggedIn {
+            ForgotPassword(viewState: $viewState)
+        } else {
+            TabView {
+                HomeView(water_mL: $water_mL, viewState: $viewState)                    .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+                SettingsView(viewState: $viewState)
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("Settings")
+                    }
+            }
+        }
         
         
         VStack {
@@ -45,26 +55,26 @@ struct ContentView: View {
             } label: {
                 Text("Grant permission")
             }
-
+            
             Button {
-               
+                
                 let content = UNMutableNotificationContent()
                 content.title = "Drink"
                 content.subtitle = "\(drinkSize) mL"
                 content.sound = UNNotificationSound.default
                 var trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
                 
-               
+                
                 trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400.0/Double(remindersPerDay), repeats: true)
                 let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                 UNUserNotificationCenter.current().add(request)
                 
-
+                
             } label: {
                 Text("Schedule Notification")
             }
         }
-
+        
     }
 }
 
