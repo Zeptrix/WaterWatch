@@ -49,7 +49,6 @@ struct ForgotPassword: View {
                         .background(Color.themeTextField)
                         .cornerRadius(20.0)
                         .shadow(radius: 10.0, x: 20, y: 10)
-                        .textInputAutocapitalization(.never)
                 }.padding([.leading, .trailing], 27.5)
                 Button {
                     Auth.auth().sendPasswordReset(withEmail: userInfo.username) { _ in

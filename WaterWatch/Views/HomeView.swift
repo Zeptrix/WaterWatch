@@ -13,7 +13,6 @@ struct HomeView: View {
     @Binding var water_mL: Int
     var waterRequirement_mL = 300
     var drinkSize_mL = 100
-    @State var percent: CGFloat = 0
     
     @Binding var viewState: ViewState
     @EnvironmentObject var userInfo: UserInfo
@@ -26,7 +25,7 @@ struct HomeView: View {
                     .edgesIgnoringSafeArea(.all)
                     .aspectRatio(contentMode: .fill)
             } else if Double(waterRequirement_mL-water_mL) <= 200{
-                Image("mid")
+                Image("dirt")
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                     .aspectRatio(contentMode: .fill)
@@ -47,29 +46,18 @@ struct HomeView: View {
                         .padding()
                 }
                 
-                ProgressBar(width: 300, height: 30, percent: percent, color1: .black, color2: .blue)
-                    .animation(.spring())
-                
                 Spacer()
                 Button{
                     water_mL += drinkSize_mL
-                    percent = CGFloat(Double(water_mL) / Double(waterRequirement_mL)) * 100
                 } label: {
                     if waterRequirement_mL-water_mL > 0{
-                        VStack{
-                            Image("bottle")
-                                .resizable()
-                                .frame(width: 250, height: 250)
-                                .shadow(radius: 10.0, x: 20, y: 10)
-                                .padding(.bottom, 10)
-                            Text("Drink!")
-                                .font(.headline)
-                                .foregroundColor(.white)
+                        ZStack{
+                            Rectangle()
+                                .foregroundColor(Color.green)
+                                .cornerRadius(10)
                                 .padding()
-                                .frame(width: 300, height: 50)
-                                .background(Color.green)
-                                .cornerRadius(15.0)
-                                .shadow(radius: 10.0, x: 20, y: 10)
+                            Text("Drink")
+                                .foregroundColor(Color.white)
                         }
                     } else {
                         ZStack{
