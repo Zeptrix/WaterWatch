@@ -32,11 +32,10 @@ struct ContentView: View {
             ForgotPassword(viewState: $viewState)
         } else {
             TabView {
-                HomeView(water_mL: $water_mL, viewState: $viewState)
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
+                HomeView(water_mL: $water_mL, viewState: $viewState)                    .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
                 SettingsView(viewState: $viewState)
                     .tabItem {
                         Image(systemName: "gear")
