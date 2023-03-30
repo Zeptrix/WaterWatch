@@ -6,6 +6,9 @@
 //
 import Foundation
 import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
+
 class UserInfo: ObservableObject {
     @Published var username: String
     @Published var password: String
@@ -17,6 +20,12 @@ class UserInfo: ObservableObject {
     @Published var activity: Double
     @Published var gender: String
 
+    var dictionary: [String: Double]{
+        ["totalWater": totalWater,
+         "age": age,
+         "weight": weight,
+         "activity": activity]
+    }
     
     init(username: String = "", password: String = "", age: Double = 0.0, weight: Double = 0.0, activity: Double = 0.0, gender: String = "", totalWater: Double = 0.0){
         self.username = username
@@ -34,6 +43,11 @@ class UserInfo: ObservableObject {
             self.username = user.email ?? ""
             self.loggedIn = true
         }
+        
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        
+      
+        
     }
     
 }
