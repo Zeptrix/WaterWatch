@@ -13,7 +13,7 @@ struct SurveryView: View {
     
     @StateObject var userInfo: UserInfo = UserInfo()
     
-    
+    @Binding var viewState: ViewState
     @State var textFieldAge: String = ""
     @State var weight: Double = 0.0
     @State var activity: Double = 0.0
@@ -83,7 +83,7 @@ struct SurveryView: View {
 }
 struct SurveryView_Previews: PreviewProvider {
     static var previews: some View {
-        SurveryView()
+        SurveryView(viewState: Binding.constant(.survey))
     }
 }
 
