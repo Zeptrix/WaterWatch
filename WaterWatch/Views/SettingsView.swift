@@ -19,20 +19,29 @@ struct SettingsView: View {
     @EnvironmentObject var userInfo: UserInfo
     @State var remindersPerDay: Double = 1440.0
     @State var drinkSize = 50.0
+    @State var every_minutes = 1.0
     
     var body: some View {
+        
         VStack{
-            Text("Settings")
-            Slider(
-                value: $remindersPerDay,
-                in: 0...1440, step: 60)
-            Text("\(remindersPerDay, specifier: "%.0001f") Notifications per day")
-            
+            Spacer()
             Slider(
                 value: $drinkSize,
-                in: 0...1440, step: 60)
-            Text("\(drinkSize, specifier: "%.0001f") Set drink size")
+                in: 0...500, step: 10).padding()
+            Text("Drink size: \(drinkSize, specifier: "%.0f") mL")
+                .padding()
+                .font(.headline)
+                .foregroundColor(.white)
             
+            Slider(
+                value: $remindersPerDay,
+                in: 0...1440, step: 1).padding()
+            Text("1 reminder every \((1440/remindersPerDay), specifier: "%.0f") minutes")
+                .padding()
+                .font(.headline)
+                .foregroundColor(.white)
+            
+            //notifications
             Button {
                 UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                     if let error = error {
@@ -52,10 +61,14 @@ struct SettingsView: View {
                 
             } label: {
                 Text("Enable Notifications")
-            }
-            
-            
-            
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(width: 300, height: 50)
+                    .background(Color.green)
+                    .cornerRadius(15.0)
+                    .shadow(radius: 10.0, x: 20, y: 10)
+            }.padding()
             
             Button{
                 viewState = .survey
@@ -83,9 +96,14 @@ struct SettingsView: View {
                     .cornerRadius(15.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
             }.padding()
+            Spacer()
         }
+        .background(
+            LinearGradient(gradient: Gradient(colors: [.blue, .yellow]), startPoint: .top, endPoint: .bottom)
+                )
+        .edgesIgnoringSafeArea(.all)
         
-        
+       
     }
 
 

@@ -24,57 +24,48 @@ struct SurveryView: View {
         
         NavigationView{
             VStack{
+                Spacer()
                 TextField("Enter your age", text: $textFieldAge)
-                    .padding()
-                    .background(Color.gray.opacity(0.3).cornerRadius(10))
-                    .foregroundColor(.red)
+                    .padding(50)
+                    .background(Color.white.opacity(0.5).cornerRadius(10).padding())
+                    .foregroundColor(.gray)
                     .font(.headline)
                 
               
-                Spacer()
+             
                 //slider
                 Slider(
                     value: $userInfo.weight,
                     in: 0...400, step: 1)
-                Text("\(userInfo.weight, specifier: "%.0001f") weight in pounds")
+                .padding()
+                Text("\(userInfo.weight, specifier: "%.0f") weight in pounds")
                 
                 
                 Slider(
                     value: $userInfo.activity,
                     in: 0...360, step: 15)
-                Text("\(userInfo.activity, specifier: "%.0001f") avg daily minutes of actvity")
+                .padding()
+                Text("\(userInfo.activity, specifier: "%.0f") avg daily minutes of actvity")
                 
-                Button {
-                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-                        if let error = error {
-                            print(error.localizedDescription)
-                        }
-                    }
-                } label: {
-                    ZStack{
-                        Rectangle()
-                            .padding()
-                            .cornerRadius(60)
-                            .foregroundColor(Color.green)
-                        Text("Enable Notifications")
-                            .padding()
-                            .foregroundColor(Color.white)
-                    }
-                   
-                }
+                
                 Button(action:{
                     userInfo.age = Double(textFieldAge) ?? 0.0
+                    viewState = .settings
                 }, label: {
                     Text("Save".uppercased())
                         .frame(maxWidth: . infinity)
-                        .padding()
-                        .background(Color.blue.cornerRadius(10))
+                        .padding(50)
+                        .background(Color.blue.cornerRadius(10).padding())
                         .foregroundColor(.white)
                         .font(.headline)
                     
                     
                 })
-            }
+                Spacer()
+            }.background(
+                LinearGradient(gradient: Gradient(colors: [.blue, .yellow]), startPoint: .top, endPoint: .bottom)
+                    )
+            .edgesIgnoringSafeArea(.all)
         }
         
     }
