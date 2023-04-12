@@ -17,7 +17,7 @@ struct ForgotPassword: View {
         ZStack() {
             Rectangle()
                 .opacity(0)
-                .background(LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottom))
+                .background(LinearGradient(gradient: Gradient(colors: [.watery, .sandy]), startPoint: .top, endPoint: .bottom))
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 HStack {
