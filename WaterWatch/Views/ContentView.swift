@@ -6,6 +6,7 @@
 //
 import SwiftUI
 import UserNotifications
+import FirebaseAuth
 
 enum ViewState{
     case home, authentication, signUp, login, forgotPassword, settings, survey
@@ -18,7 +19,11 @@ struct ContentView: View {
     @State var water_mL = 0
     @Binding var remindersPerDay: Double
     @Binding var drinkSize: Double
+    @State private var tabSelected: Tab = .house
     
+//    init() {
+//        UITabBar.appearance().isHidden = true
+//    }
     
     var body: some View {
         if viewState == .authentication && !userInfo.loggedIn {
@@ -31,39 +36,28 @@ struct ContentView: View {
             ForgotPassword(viewState: $viewState)
         } else if viewState == .survey && userInfo.loggedIn {
             SurveryView(viewState: $viewState)
-        } else if viewState == .settings && userInfo.loggedIn{
-            TabView {
-                HomeView(water_mL: $water_mL, viewState: $viewState)
-                    .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
-                }
-                SettingsView(viewState: $viewState)
-                    .tabItem {
-                        Image(systemName: "gear")
-                        Text("Settings")
-                    }
-            }
         } else {
-            TabView {
-                HomeView(water_mL: $water_mL, viewState: $viewState)
-                    .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
-                }
-                SettingsView(viewState: $viewState)
-                    .tabItem {
-                        Image(systemName: "gear")
-                        Text("Settings")
+            ZStack {
+                VStack {
+                    TabView(selection: $tabSelected) {
+                        if(tabSelected == .house) {
+                            HomeView(water_mL: $water_mL, viewState: $viewState)
+                        } else if (tabSelected == .gearshape) {
+                            SettingsView(viewState: $viewState)
+                        }
                     }
+                }
+                VStack {
+                    Spacer()
+                    CustomTabBar(selectedTab: $tabSelected)
+                }
             }
         }
-        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(remindersPerDay:Binding.constant( 1440.0), drinkSize: Binding.constant( 50.0))
+        ContentView(remindersPerDay: Binding.constant(1440.0), drinkSize: Binding.constant(50.0))
     }
 }

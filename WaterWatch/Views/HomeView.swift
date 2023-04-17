@@ -11,33 +11,30 @@ import FirebaseAuth
 
 struct HomeView: View {
     @Binding var water_mL: Int
-    var waterRequirement_mL = 300
+    var waterRequirement_mL = 905
     var drinkSize_mL = 100
+    @State var percent: CGFloat = 0
     
     @Binding var viewState: ViewState
     @EnvironmentObject var userInfo: UserInfo
     
     var body: some View {
-        ZStack{
-            if Double(waterRequirement_mL-water_mL) <= 100 {
+        ZStack {
+            if Double(water_mL) / Double(waterRequirement_mL) >= 2.0/3.0 {
                 Image("wet")
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
-                    .aspectRatio(contentMode: .fill)
-            } else if Double(waterRequirement_mL-water_mL) <= 200 {
+            } else if Double(water_mL) / Double(waterRequirement_mL) >= 1.0/3.0 {
                 Image("mid")
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
-                    .aspectRatio(contentMode: .fill)
-            } else if Double(waterRequirement_mL-water_mL) <= 300 {
+            } else {
                 Image("dry")
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
-                    .aspectRatio(contentMode: .fill)
             }
             
             VStack {
-                Spacer()
                 ZStack {
                     ProgressBar(width: 300, height: 30, percent: percent, color1: .black, color2: .blue)
                         .animation(.spring())
@@ -48,17 +45,29 @@ struct HomeView: View {
                 
                 Spacer()
                 if waterRequirement_mL-water_mL > 0 {
-                    Button { withAnimation {
-                        water_mL += drinkSize_mL
-                        percent = CGFloat(Double(water_mL) / Double(waterRequirement_mL)) * 100
-                    }
-                    } label: {
-                        VStack{
+                    VStack {
+                        Button { withAnimation {
+                            water_mL += drinkSize_mL
+                            if water_mL > waterRequirement_mL {
+                                water_mL = waterRequirement_mL
+                            }
+                            percent = CGFloat(Double(water_mL) / Double(waterRequirement_mL)) * 100
+                        }
+                        } label: {
                             Image("bottle")
                                 .resizable()
                                 .frame(width: 250, height: 250)
                                 .shadow(radius: 10.0, x: 20, y: 10)
                                 .padding(.bottom, 10)
+                        }
+                        Button { withAnimation {
+                            water_mL += drinkSize_mL
+                            if water_mL > waterRequirement_mL {
+                                water_mL = waterRequirement_mL
+                            }
+                            percent = CGFloat(Double(water_mL) / Double(waterRequirement_mL)) * 100
+                        }
+                        } label: {
                             Text("Drink!")
                                 .font(.headline)
                                 .foregroundColor(.white)
@@ -87,20 +96,6 @@ struct HomeView: View {
                     }
                 }
                 Spacer()
-                Button(action: {
-                    try! Auth.auth().signOut()
-                    userInfo.loggedIn = false
-                    viewState = .authentication
-                }) {
-                    Text("Log Out")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(Color.green)
-                        .cornerRadius(15.0)
-                        .shadow(radius: 10.0, x: 20, y: 10)
-                }
             }
         }
     }
