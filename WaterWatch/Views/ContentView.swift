@@ -59,37 +59,6 @@ struct ContentView: View {
             }
         }
         
-        
-        VStack {
-            Button {
-                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-                    if let error = error {
-                        print(error.localizedDescription)
-                    }
-                }
-            } label: {
-                Text("Grant permission")
-            }
-            
-            Button {
-                
-                let content = UNMutableNotificationContent()
-                content.title = "Drink"
-                content.subtitle = "\(drinkSize) mL"
-                content.sound = UNNotificationSound.default
-                var trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-                
-                
-                trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400.0/Double(remindersPerDay), repeats: true)
-                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-                UNUserNotificationCenter.current().add(request)
-                
-                
-            } label: {
-                Text("Schedule Notification")
-            }
-        }
-        
     }
 }
 
