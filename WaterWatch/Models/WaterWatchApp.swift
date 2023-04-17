@@ -27,7 +27,7 @@ struct WaterWatchApp: App {
   var body: some Scene {
     WindowGroup {
       NavigationView {
-        ContentView()
+          ContentView(remindersPerDay: Binding.constant(0.0), drinkSize: Binding.constant(0.0))
               .environmentObject(userInfo)
       }
     }

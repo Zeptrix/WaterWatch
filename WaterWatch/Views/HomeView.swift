@@ -13,7 +13,6 @@ struct HomeView: View {
     @Binding var water_mL: Int
     var waterRequirement_mL = 300
     var drinkSize_mL = 100
-    @State var percent: CGFloat = 0
     
     @Binding var viewState: ViewState
     @EnvironmentObject var userInfo: UserInfo
