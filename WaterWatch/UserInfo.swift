@@ -47,6 +47,8 @@ class UserInfo: ObservableObject {
         guard let uid = Auth.auth().currentUser?.uid else {return}
         
         let database = Database.database().reference()
+        
+        database.child("users/\(uid)").setValue(dictionary)
       //fire base storage goes here
 //        Database.database().reference().child("users/\(uid)").observeSingleEvent(of: .value)
 //            { snapshot in
