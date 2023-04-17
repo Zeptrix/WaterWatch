@@ -23,7 +23,6 @@ struct WaterWatchApp: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
   @StateObject var userInfo: UserInfo = UserInfo()
 
-
   var body: some Scene {
     WindowGroup {
       NavigationView {
