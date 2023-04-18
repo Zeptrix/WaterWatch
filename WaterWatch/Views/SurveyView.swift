@@ -18,7 +18,6 @@ struct SurveryView: View {
 
     
     //find sliders for weight and activity
-    
     var body: some View {
         
 

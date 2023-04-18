@@ -16,9 +16,6 @@ struct ContentView: View {
     
     @State var viewState: ViewState = ViewState.authentication
     @EnvironmentObject var userInfo: UserInfo
-    @State var water_mL = 0
-    @Binding var remindersPerDay: Double
-    @Binding var drinkSize: Double
     @State private var tabSelected: Tab = .house
     
     var body: some View {
@@ -37,7 +34,7 @@ struct ContentView: View {
                 VStack {
                     TabView(selection: $tabSelected) {
                         if(tabSelected == .house) {
-                            HomeView(water_mL: $water_mL, viewState: $viewState)
+                            HomeView(viewState: $viewState)
                         } else if (tabSelected == .gearshape) {
                             SettingsView(viewState: $viewState)
                         }
@@ -54,6 +51,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(remindersPerDay: Binding.constant(1440.0), drinkSize: Binding.constant(50.0))
+        ContentView()
     }
 }
