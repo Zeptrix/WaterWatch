@@ -15,19 +15,24 @@ class UserInfo: ObservableObject {
     @Published var loggedIn: Bool = true
     
     @Published var totalWater: Double
+    @Published var amountDrank: Double
+    @Published var drinkSize: Double
     @Published var age: Double
     @Published var weight: Double
     @Published var activity: Double
-    @Published var gender: String
+    @Published var gender: Double
 
     var dictionary: [String: Double]{
         ["totalWater": totalWater,
+         "amountDrank": amountDrank,
+         "drinkSize": drinkSize,
          "age": age,
          "weight": weight,
-         "activity": activity]
+         "activity": activity,
+         "gender": gender]
     }
     
-    init(username: String = "", password: String = "", age: Double = 0.0, weight: Double = 0.0, activity: Double = 0.0, gender: String = "", totalWater: Double = 0.0){
+    init(username: String = "", password: String = "", age: Double = 0.0, weight: Double = 0.0, activity: Double = 0.0, gender: Double = 0.0, totalWater: Double = 0.0, amountDrank: Double = 0.0, drinkSize: Double = 0.0){
         self.username = username
         self.password = password
         
@@ -36,6 +41,8 @@ class UserInfo: ObservableObject {
         self.activity = activity
         self.gender = gender
         self.totalWater = totalWater
+        self.amountDrank = amountDrank
+        self.drinkSize = drinkSize
         
         Auth.auth().addStateDidChangeListener { _, user in
             guard let user = user else {return}
@@ -45,41 +52,26 @@ class UserInfo: ObservableObject {
         }
         
         guard let uid = Auth.auth().currentUser?.uid else {return}
-        
         let database = Database.database().reference()
         
         database.child("users/\(uid)").setValue(dictionary)
         
-        
         database.child("users/\(uid)").observeSingleEvent(of: .value, with: { snapshot in
-            guard let value = snapshot.value as? [String: Double] else{return}
+            guard let value = snapshot.value as? [String: Double] else {return}
             if let t = value["totalWater"]{
                 self.totalWater = t}
+            if let am = value["amountDrank"]{
+                self.amountDrank = am}
+            if let ds = value["drinkSize"]{
+                self.drinkSize = ds}
             if let ag = value["age"]{
                 self.age = ag}
             if let w = value["weight"]{
                 self.weight = w}
             if let ac = value["activity"]{
                 self.activity = ac}
+            if let g = value["gender"]{
+                self.gender = g}
         })
-      //fire base storage goes here
-//        Database.database().reference().child("users/\(uid)").observeSingleEvent(of: .value)
-//            { snapshot in
-//                let dictionary = snapshot.value as? [String: AnyObject] ?? [:]
-//
-//
-//                Storage.storage().reference(forURL: ag as! String).getData(maxSize: <#Int64#>){
-//                    data, error in
-//                    if let data = data{
-//                        self.age = Double(data) ?? self.age
-//                    } else {
-//                        print(error?.localizedDescription)
-//                    }
-//                }
-//        }
-        
     }
-    
 }
-
-
