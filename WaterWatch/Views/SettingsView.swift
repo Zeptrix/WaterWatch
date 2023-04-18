@@ -19,24 +19,23 @@ struct SettingsView: View {
     @EnvironmentObject var userInfo: UserInfo
     @State var remindersPerDay: Double = 1440.0
     @State var drinkSize = 50.0
-    @State var every_minutes = 1.0
     
     var body: some View {
         
         VStack{
             Spacer()
             Slider(
-                value: $drinkSize,
+                value: $userInfo.drinkSize,
                 in: 0...500, step: 10).padding()
-            Text("Drink size: \(drinkSize, specifier: "%.0f") mL")
+            Text("Drink size: \(userInfo.drinkSize, specifier: "%.0f") mL")
                 .padding()
                 .font(.headline)
                 .foregroundColor(.white)
             
             Slider(
-                value: $remindersPerDay,
+                value: $userInfo.remindersPerDay,
                 in: 0...1440, step: 1).padding()
-            Text("1 reminder every \((1440/remindersPerDay), specifier: "%.0f") minutes")
+            Text("1 reminder every \((1440/userInfo.remindersPerDay), specifier: "%.0f") minutes")
                 .padding()
                 .font(.headline)
                 .foregroundColor(.white)
@@ -50,12 +49,12 @@ struct SettingsView: View {
                 }
                 let content = UNMutableNotificationContent()
                 content.title = "Drink"
-                content.subtitle = "\(drinkSize) mL"
+                content.subtitle = "\(userInfo.drinkSize) mL"
                 content.sound = UNNotificationSound.default
                 var trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
                 
                 
-                trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400.0/Double(remindersPerDay), repeats: true)
+                trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400.0/Double(userInfo.remindersPerDay), repeats: true)
                 let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                 UNUserNotificationCenter.current().add(request)
                 
