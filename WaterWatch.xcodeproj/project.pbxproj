@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		42561AD029CDDB8000DB675D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42561ACF29CDDB8000DB675D /* LocationManager.swift */; };
 		42561AD229CDDBC800DB675D /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42561AD129CDDBC800DB675D /* FetchData.swift */; };
+		429D060E29EEC8C300CD7B4C /* WaterIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429D060D29EEC8C300CD7B4C /* WaterIntake.swift */; };
 		42A5F77C29D1E0180097B66A /* WaterWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A5F77B29D1E0180097B66A /* WaterWatchApp.swift */; };
 		48E58DC829C8957A00D68A82 /* SurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58DC729C8957A00D68A82 /* SurveyView.swift */; };
 		48E58DCA29C895D500D68A82 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E58DC929C895D500D68A82 /* CheckBox.swift */; };
@@ -58,6 +59,7 @@
 		293B6BC40116789C39E08D3B /* Pods_WaterWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42561ACF29CDDB8000DB675D /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		42561AD129CDDBC800DB675D /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
+		429D060D29EEC8C300CD7B4C /* WaterIntake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterIntake.swift; sourceTree = "<group>"; };
 		42A5F77B29D1E0180097B66A /* WaterWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWatchApp.swift; sourceTree = "<group>"; };
 		48E58DC729C8957A00D68A82 /* SurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyView.swift; sourceTree = "<group>"; };
 		48E58DC929C895D500D68A82 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		6675BD0A29B0F4CB000748E2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				429D060D29EEC8C300CD7B4C /* WaterIntake.swift */,
 				66D84E7629B776F7000B6D4C /* UserInfo.swift */,
 				42561ACF29CDDB8000DB675D /* LocationManager.swift */,
 				66D84E7829B7801B000B6D4C /* Constants.swift */,
