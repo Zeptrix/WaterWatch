@@ -21,10 +21,6 @@ struct ContentView: View {
     @Binding var drinkSize: Double
     @State private var tabSelected: Tab = .house
     
-//    init() {
-//        UITabBar.appearance().isHidden = true
-//    }
-    
     var body: some View {
         if viewState == .authentication && !userInfo.loggedIn {
             AuthenticationView(viewState: $viewState)
