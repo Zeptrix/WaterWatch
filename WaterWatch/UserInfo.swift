@@ -49,13 +49,25 @@ class UserInfo: ObservableObject {
         let database = Database.database().reference()
         
         database.child("users/\(uid)").setValue(dictionary)
+        
+        
+        database.child("users/\(uid)").observeSingleEvent(of: .value, with: { snapshot in
+            guard let value = snapshot.value as? [String: Double] else{return}
+            if let t = value["totalWater"]{
+                self.totalWater = t}
+            if let ag = value["age"]{
+                self.age = ag}
+            if let w = value["weight"]{
+                self.weight = w}
+            if let ac = value["activity"]{
+                self.activity = ac}
+        })
       //fire base storage goes here
 //        Database.database().reference().child("users/\(uid)").observeSingleEvent(of: .value)
 //            { snapshot in
 //                let dictionary = snapshot.value as? [String: AnyObject] ?? [:]
 //
-//                guard let ag = dictionary["age"] else {return}
-//                
+//
 //                Storage.storage().reference(forURL: ag as! String).getData(maxSize: <#Int64#>){
 //                    data, error in
 //                    if let data = data{
