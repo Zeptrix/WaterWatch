@@ -21,6 +21,7 @@ class UserInfo: ObservableObject {
     @Published var weight: Double
     @Published var activity: Double
     @Published var gender: Double
+    @Published var remindersPerDay: Double
 
     var dictionary: [String: Double]{
         ["totalWater": totalWater,
@@ -29,10 +30,11 @@ class UserInfo: ObservableObject {
          "age": age,
          "weight": weight,
          "activity": activity,
-         "gender": gender]
+         "gender": gender,
+         "remindersPerDay": remindersPerDay]
     }
     
-    init(username: String = "", password: String = "", age: Double = 0.0, weight: Double = 0.0, activity: Double = 0.0, gender: Double = 0.0, totalWater: Double = 0.0, amountDrank: Double = 0.0, drinkSize: Double = 0.0){
+    init(username: String = "", password: String = "", age: Double = 0.0, weight: Double = 0.0, activity: Double = 0.0, gender: Double = 0.0, totalWater: Double = 250.0, amountDrank: Double = 0.0, drinkSize: Double = 50.0, remindersPerDay: Double = 1440.0){
         self.username = username
         self.password = password
         
@@ -43,6 +45,7 @@ class UserInfo: ObservableObject {
         self.totalWater = totalWater
         self.amountDrank = amountDrank
         self.drinkSize = drinkSize
+        self.remindersPerDay = remindersPerDay
         
         Auth.auth().addStateDidChangeListener { _, user in
             guard let user = user else {return}
@@ -72,6 +75,9 @@ class UserInfo: ObservableObject {
                 self.activity = ac}
             if let g = value["gender"]{
                 self.gender = g}
+            if let rm = value["remindersPerDay"]{
+                self.remindersPerDay = rm
+            }
         })
     }
 }

@@ -10,21 +10,17 @@ import Firebase
 import FirebaseAuth
 
 struct HomeView: View {
-    @Binding var water_mL: Int
-    var waterRequirement_mL = 905
-    var drinkSize_mL = 100
-    @State var percent: CGFloat = 0
-    
-    @Binding var viewState: ViewState
     @EnvironmentObject var userInfo: UserInfo
-    
+    @Binding var viewState: ViewState
+    @State var percent: CGFloat = 0
+        
     var body: some View {
         ZStack {
-            if Double(water_mL) / Double(waterRequirement_mL) >= 2.0/3.0 {
+            if Double(userInfo.amountDrank) / Double(userInfo.totalWater) >= 2.0/3.0 {
                 Image("wet")
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
-            } else if Double(water_mL) / Double(waterRequirement_mL) >= 1.0/3.0 {
+            } else if Double(userInfo.amountDrank) / Double(userInfo.totalWater) >= 1.0/3.0 {
                 Image("mid")
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
@@ -44,14 +40,14 @@ struct HomeView: View {
                 }
                 
                 Spacer()
-                if waterRequirement_mL-water_mL > 0 {
+                if userInfo.totalWater-userInfo.amountDrank > 0 {
                     VStack {
                         Button { withAnimation {
-                            water_mL += drinkSize_mL
-                            if water_mL > waterRequirement_mL {
-                                water_mL = waterRequirement_mL
+                            userInfo.amountDrank += userInfo.drinkSize
+                            if userInfo.amountDrank > userInfo.totalWater {
+                                userInfo.amountDrank = userInfo.totalWater
                             }
-                            percent = CGFloat(Double(water_mL) / Double(waterRequirement_mL)) * 100
+                            percent = CGFloat(Double(userInfo.amountDrank) / Double(userInfo.totalWater)) * 100
                         }
                         } label: {
                             Image("bottle")
@@ -61,11 +57,11 @@ struct HomeView: View {
                                 .padding(.bottom, 10)
                         }
                         Button { withAnimation {
-                            water_mL += drinkSize_mL
-                            if water_mL > waterRequirement_mL {
-                                water_mL = waterRequirement_mL
+                            userInfo.amountDrank += userInfo.drinkSize
+                            if userInfo.amountDrank > userInfo.totalWater {
+                                userInfo.amountDrank = userInfo.totalWater
                             }
-                            percent = CGFloat(Double(water_mL) / Double(waterRequirement_mL)) * 100
+                            percent = CGFloat(Double(userInfo.amountDrank) / Double(userInfo.totalWater)) * 100
                         }
                         } label: {
                             Text("Drink!")
@@ -102,7 +98,7 @@ struct HomeView: View {
     
     struct HomeView_Previews: PreviewProvider {
         static var previews: some View {
-            HomeView(water_mL: Binding.constant(0), viewState: Binding.constant(.home))
+            HomeView(viewState: Binding.constant(.home))
         }
     }
 }

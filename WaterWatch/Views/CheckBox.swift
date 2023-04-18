@@ -7,63 +7,59 @@
 import SwiftUI
 struct CheckBox: View {
     
-    @StateObject var userInfo: UserInfo = UserInfo()
+    @EnvironmentObject var userInfo: UserInfo
     @State var isChecked1:Bool = false
     @State var isChecked2:Bool = false
     @State var isChecked3:Bool = false
     
-    var title1:String
-    var title2:String
-    var title3:String
-    
+    // male
     func toggle1(){
         isChecked1 = !isChecked1
-        userInfo.gender = title1
-   }
+        userInfo.gender = 0
+    }
+    
+    // female
     func toggle2(){
         isChecked2 = !isChecked2
-        userInfo.gender = title2
-      
-   }
+        userInfo.gender = 1
+        
+    }
+    
+    // other
     func toggle3(){
         isChecked3 = !isChecked3
-        userInfo.gender = title3
-   }
-   var body: some View {
-       
-       Button(action: toggle1){
-           HStack{
-               Text(title1)
-               Image(systemName: isChecked1 ? "checkmark.square": "square")
-      
-           }
-       }
-     
-       Button(action: toggle2){
-           HStack{
-               Text(title2)
-               Image(systemName: isChecked2 ? "checkmark.square": "square")
-           }
-       }
-      
-       Button(action: toggle3){
-           HStack{
-               Text(title3)
-               Image(systemName: isChecked3 ? "checkmark.square": "square")
-           }
-       }
-       
-      
-     
-   }
+        userInfo.gender = 2
+    }
+    var body: some View {
+        
+        Button(action: toggle1){
+            HStack{
+                Text("Male")
+                Image(systemName: isChecked1 ? "checkmark.square": "square")
+                
+            }
+        }
+        
+        Button(action: toggle2){
+            HStack{
+                Text("Female")
+                Image(systemName: isChecked2 ? "checkmark.square": "square")
+            }
+        }
+        
+        Button(action: toggle3){
+            HStack{
+                Text("Other")
+                Image(systemName: isChecked3 ? "checkmark.square": "square")
+            }
+        }
+        
+        
+        
+    }
 }
 struct CheckBox_Previews: PreviewProvider {
     static var previews: some View {
-        CheckBox(title1: "", title2: "", title3: "")
-        
+        CheckBox()
+    }
 }
-}
-
-
-
-

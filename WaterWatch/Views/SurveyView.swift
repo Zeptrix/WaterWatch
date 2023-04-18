@@ -11,7 +11,7 @@ import FirebaseStorage
 import FirebaseDatabase
 struct SurveryView: View {
     
-    @StateObject var userInfo: UserInfo = UserInfo()
+    @EnvironmentObject var userInfo: UserInfo
     
     @Binding var viewState: ViewState
     @State var textFieldAge: String = ""
@@ -19,7 +19,6 @@ struct SurveryView: View {
     @State var activity: Double = 0.0
     
     //find sliders for weight and activity
-    
     var body: some View {
         
         NavigationView{
