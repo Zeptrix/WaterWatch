@@ -23,20 +23,30 @@ struct SurveryView: View {
         NavigationView{
             VStack{
                 Spacer()
-                TextField("Enter your age", text: $textFieldAge)
-                    .padding(50)
-                    .background(Color.white.opacity(0.5).cornerRadius(10).padding())
-                    .foregroundColor(.gray)
-                    .font(.headline)
+
                 
               
-             
+                Slider(
+                    value: $userInfo.age,
+                    in: 0...99, step: 1)
+                .padding()
+              
+                Text("Age: \(userInfo.age, specifier: "%.0f")")
+                    .padding()
+                    .font(.headline)
+                    .foregroundColor(.white)
+                
+                
                 //slider
                 Slider(
                     value: $userInfo.weight,
                     in: 0...400, step: 1)
                 .padding()
-                Text("\(userInfo.weight, specifier: "%.0f") weight in pounds")
+              
+                Text("Weight in pounds: \(userInfo.weight, specifier: "%.0f")")
+                    .padding()
+                    .font(.headline)
+                    .foregroundColor(.white)
                 
                 
                 Slider(
@@ -44,17 +54,18 @@ struct SurveryView: View {
                     in: 0...360, step: 15)
                 .padding()
                 Text("\(userInfo.activity, specifier: "%.0f") avg daily minutes of actvity")
+                    .padding()
+                    .font(.headline)
+                    .foregroundColor(.white)
                 
                 
-                Button(action: {
-                    userInfo.age = Double(textFieldAge) ?? 0.0
-                    updateWater()
+
                     viewState = .settings
                 }, label: {
                     Text("Save".uppercased())
                         .frame(maxWidth: . infinity)
-                        .padding(50)
-                        .background(Color.blue.cornerRadius(10).padding())
+                        .padding(30)
+                        .background(Color.green.cornerRadius(10).padding())
                         .foregroundColor(.white)
                         .font(.headline)
                     

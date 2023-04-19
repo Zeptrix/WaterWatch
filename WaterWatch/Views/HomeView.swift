@@ -81,7 +81,7 @@ struct HomeView: View {
                             .frame(width: 250, height: 250)
                             .shadow(radius: 10.0, x: 20, y: 10)
                             .padding(.bottom, 10)
-                        Text("Full Quenched!")
+                        Text("Quenched!")
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding()
