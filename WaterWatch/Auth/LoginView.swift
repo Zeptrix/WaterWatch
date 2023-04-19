@@ -18,7 +18,8 @@ struct LoginView: View {
             VStack() {
                 Text("WaterWatch Login")
                     .font(.largeTitle).foregroundColor(Color.white)
-                    .padding([.top, .bottom], 40)
+                    .padding(.top, 30)
+                    .padding(.bottom, 40)
                     .shadow(radius: 10.0, x: 20, y: 10)
                 
                 Image("WaterWatchLogo")
@@ -27,7 +28,7 @@ struct LoginView: View {
                     .clipShape(Circle())
                     .overlay(Circle().stroke(Color.white, lineWidth: 4))
                     .shadow(radius: 10.0, x: 20, y: 10)
-                    .padding(.bottom, 50)
+                    .padding(.bottom, 40)
                 
                 VStack(alignment: .leading, spacing: 15) {
                     TextField("Email or Username", text: $userInfo.username)
@@ -62,8 +63,7 @@ struct LoginView: View {
                         .background(Color.green)
                         .cornerRadius(15.0)
                         .shadow(radius: 10.0, x: 20, y: 10)
-                }.padding(.top, 50)
-                
+                }.padding(.top, 30).padding(.bottom, 20)
                 Spacer()
                 Button(action: {
                     viewState = .forgotPassword
@@ -71,6 +71,7 @@ struct LoginView: View {
                     Text("Forgot Password?")
                         .foregroundColor(.white)
                 }
+                Spacer()
             }
             .background(
                 LinearGradient(gradient: Gradient(colors: [.watery, .sandy]), startPoint: .top, endPoint: .bottom)

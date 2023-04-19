@@ -12,7 +12,7 @@ import FirebaseStorage
 class UserInfo: ObservableObject {
     @Published var username: String
     @Published var password: String
-    @Published var loggedIn: Bool = true
+    @Published var loggedIn: Bool = false
     
     @Published var totalWater: Double
     @Published var amountDrank: Double
@@ -55,6 +55,7 @@ class UserInfo: ObservableObject {
         }
         
         guard let uid = Auth.auth().currentUser?.uid else {return}
+        
         let database = Database.database().reference()
         
         database.child("users/\(uid)").setValue(dictionary)
