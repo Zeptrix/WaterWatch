@@ -18,7 +18,8 @@ struct SignUpView: View {
             VStack() {
                 Text("WaterWatch Sign Up")
                     .font(.largeTitle).foregroundColor(Color.white)
-                    .padding([.top, .bottom], 40)
+                    .padding(.top, 30)
+                    .padding(.bottom, 40)
                     .shadow(radius: 10.0, x: 20, y: 10)
                 
                 Image("WaterWatchLogo")
@@ -47,8 +48,8 @@ struct SignUpView: View {
                 Button(action: {
                     Auth.auth().createUser(withEmail: userInfo.username, password: userInfo.password) {user, error in
                         if let _ = user {
-                            viewState = .home
                             userInfo.loggedIn = true
+                            viewState = .survey
                         } else {
                             print(error.debugDescription)
                         }
@@ -62,7 +63,7 @@ struct SignUpView: View {
                         .background(Color.green)
                         .cornerRadius(15.0)
                         .shadow(radius: 10.0, x: 20, y: 10)
-                }.padding(.top, 50)
+                }.padding(.top, 30)
                 Spacer()
             }
             .background(
