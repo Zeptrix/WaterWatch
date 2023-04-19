@@ -21,11 +21,9 @@ struct SurveryView: View {
         
 
         NavigationView{
-            VStack{
+            VStack {
                 Spacer()
 
-                
-              
                 Slider(
                     value: $userInfo.age,
                     in: 0...99, step: 1)
@@ -58,8 +56,9 @@ struct SurveryView: View {
                     .font(.headline)
                     .foregroundColor(.white)
                 
-                
-
+                Button(action:{
+                    userInfo.age = Double(textFieldAge) ?? 0.0
+           
                     viewState = .settings
                 }, label: {
                     Text("Save".uppercased())
