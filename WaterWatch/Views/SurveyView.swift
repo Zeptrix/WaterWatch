@@ -12,10 +12,9 @@ import FirebaseDatabase
 struct SurveryView: View {
     
     @EnvironmentObject var userInfo: UserInfo
-    
+    @StateObject var data = FetchData()
     @Binding var viewState: ViewState
     @State var textFieldAge: String = ""
-
     
     //find sliders for weight and activity
     var body: some View {
@@ -47,9 +46,9 @@ struct SurveryView: View {
                 Text("\(userInfo.activity, specifier: "%.0f") avg daily minutes of actvity")
                 
                 
-                Button(action:{
+                Button(action: {
                     userInfo.age = Double(textFieldAge) ?? 0.0
-           
+                    updateWater()
                     viewState = .settings
                 }, label: {
                     Text("Save".uppercased())
@@ -69,13 +68,35 @@ struct SurveryView: View {
         }
         
     }
- 
     
+    func updateWater(){
+        if(data.response.current.temp_f > 80 ){
+            if(userInfo.gender == 1) { //.5
+                userInfo.totalWater = ((userInfo.weight * (1.0/2.0)) + ((userInfo.activity * (1.0/30.0)) * 12.0) + (data.response.current.temp_f/5.0))
+            }
+            else if(userInfo.gender == 0){
+                userInfo.totalWater = ((userInfo.weight * (2.0/3.0)) + ((userInfo.activity * (1.0/30.0)) * 12.0) + (data.response.current.temp_f/5.0))
+            }
+            else {
+                userInfo.totalWater = ((userInfo.weight * (1.0/2.0)) + ((userInfo.activity * (1.0/30.0)) * 12.0) + (data.response.current.temp_f/5.0))
+            }
+        }
+        else{
+            if(userInfo.gender == 1) { //.5
+                userInfo.totalWater = ((userInfo.weight * (1.0/2.0)) + ((userInfo.activity * (1.0/30.0)) * 12.0) )
+            }
+            else if(userInfo.gender == 0){
+                userInfo.totalWater = ((userInfo.weight * (2.0/3.0)) + ((userInfo.activity * (1.0/30.0)) * 12.0))
+            }
+            else {
+                userInfo.totalWater = ((userInfo.weight * (1.0/2.0)) + ((userInfo.activity * (1.0/30.0)) * 12.0))
+            }
+        }
+    }
+
 }
 struct SurveryView_Previews: PreviewProvider {
     static var previews: some View {
         SurveryView(viewState: Binding.constant(.survey))
     }
 }
-
-
