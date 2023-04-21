@@ -48,11 +48,13 @@ struct LoginView: View {
                 Button(action: {
                     Auth.auth().signIn(withEmail: userInfo.username, password: userInfo.password) { user, error in
                         if let _ = user {
+                            userInfo.readData()
                             userInfo.loggedIn = true
                             viewState = .home
-                        } else {
-                            print(error?.localizedDescription ?? "")
                         }
+//                        else {
+//                            print(error?.localizedDescription ?? "")
+//                        }
                     }
                 }) {
                     Text("Sign In")

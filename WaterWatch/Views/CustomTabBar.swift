@@ -10,10 +10,12 @@ import SwiftUI
 enum Tab: String, CaseIterable {
     case house
     case gearshape
+    case doc
 }
 
 struct CustomTabBar: View {
     @Binding var selectedTab: Tab
+    
     private var fillImage: String {
         selectedTab.rawValue + ".fill"
     }
@@ -23,6 +25,8 @@ struct CustomTabBar: View {
             return .blue
         case .gearshape:
             return .orange
+        case .doc:
+            return .purple
         }
     }
     

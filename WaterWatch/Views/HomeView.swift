@@ -13,7 +13,8 @@ struct HomeView: View {
     @EnvironmentObject var userInfo: UserInfo
     @Binding var viewState: ViewState
     @State var percent: CGFloat = 0
-        
+    var firstTime = true
+    
     var body: some View {
         ZStack {
             if Double(userInfo.amountDrank) / Double(userInfo.totalWater) >= 2.0/3.0 {
@@ -92,6 +93,14 @@ struct HomeView: View {
                     }
                 }
                 Spacer()
+            }
+        }.onAppear {
+            if(userInfo.age == 0) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    percent = CGFloat(Double(userInfo.amountDrank) / Double(userInfo.totalWater)) * 100
+                }
+            } else {
+                percent = CGFloat(Double(userInfo.amountDrank) / Double(userInfo.totalWater)) * 100
             }
         }
     }
