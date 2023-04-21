@@ -38,11 +38,9 @@
 		667ADFDC29B0F7520062C6F0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667ADFDB29B0F7520062C6F0 /* LoginView.swift */; };
 		667ADFDE29B0F75F0062C6F0 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667ADFDD29B0F75F0062C6F0 /* SignUpView.swift */; };
 		667ADFE029B0F7740062C6F0 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667ADFDF29B0F7740062C6F0 /* ForgotPassword.swift */; };
-		66D84E7529B776EE000B6D4C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D84E7429B776EE000B6D4C /* HomeView.swift */; };
 		66D84E7729B776F7000B6D4C /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D84E7629B776F7000B6D4C /* UserInfo.swift */; };
 		66D84E7929B7801B000B6D4C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D84E7829B7801B000B6D4C /* Constants.swift */; };
 		66E9EEC629F1B3FB00363F63 /* WaveSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E9EEC529F1B3FB00363F63 /* WaveSlider.swift */; };
-		CDD596A62C28CBDDED62376B /* Pods_WaterWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 293B6BC40116789C39E08D3B /* Pods_WaterWatch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */

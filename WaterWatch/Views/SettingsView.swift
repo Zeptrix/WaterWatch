@@ -41,7 +41,9 @@ struct SettingsView: View {
                     }
                     let content = UNMutableNotificationContent()
                     content.title = "Drink"
-                    content.subtitle = "\(userInfo.drinkSize) mL"
+                    content.subtitle =  String(format: "%.0f", userInfo.drinkSize) + " mL"
+                    
+                    
                     content.sound = UNNotificationSound.default
                     var trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
 
