@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 import Firebase
 import FirebaseAuth
 
@@ -13,7 +14,11 @@ struct HomeView: View {
     @EnvironmentObject var userInfo: UserInfo
     @Binding var viewState: ViewState
     @State var percent: CGFloat = 0
-    var firstTime = true
+    
+    @State var waterInfo: WaterInfo = WaterInfo()
+
+    @AppStorage("Water", store: UserDefaults(suiteName: "group.coding.WaterWatch"))
+    var waterData: Data = Data()
     
     var body: some View {
         ZStack {
@@ -45,10 +50,16 @@ struct HomeView: View {
                     VStack {
                         Button { withAnimation {
                             userInfo.amountDrank += userInfo.drinkSize
+                            //  save(user: userInfo)
                             if userInfo.amountDrank > userInfo.totalWater {
                                 userInfo.amountDrank = userInfo.totalWater
                             }
                             percent = CGFloat(Double(userInfo.amountDrank) / Double(userInfo.totalWater)) * 100
+                            save(waterInfo: waterInfo)
+                            waterInfo.waterPercent = percent
+                            waterInfo.amountDrank = userInfo.amountDrank
+                            waterInfo.totalWater = userInfo.totalWater
+                            
                         }
                         } label: {
                             Image("bottle")
@@ -63,6 +74,10 @@ struct HomeView: View {
                                 userInfo.amountDrank = userInfo.totalWater
                             }
                             percent = CGFloat(Double(userInfo.amountDrank) / Double(userInfo.totalWater)) * 100
+                            save(waterInfo: waterInfo)
+                            waterInfo.waterPercent = percent
+                            waterInfo.amountDrank = userInfo.amountDrank
+                            waterInfo.totalWater = userInfo.totalWater
                         }
                         } label: {
                             Text("Drink!")
@@ -103,6 +118,16 @@ struct HomeView: View {
                 percent = CGFloat(Double(userInfo.amountDrank) / Double(userInfo.totalWater)) * 100
             }
         }
+        
+       
+        }
+    func save(waterInfo: WaterInfo){
+        guard let waterData = try? JSONEncoder().encode(waterInfo) else { return }
+        self.waterData = waterData
+        print("save \(waterInfo.amountDrank)")
+        print("save \(waterInfo.waterPercent)")
+
+        
     }
     
     struct HomeView_Previews: PreviewProvider {
@@ -110,6 +135,7 @@ struct HomeView: View {
             HomeView(viewState: Binding.constant(.home))
         }
     }
+    
 }
 
 struct AnimatableNumberModifier: AnimatableModifier {
