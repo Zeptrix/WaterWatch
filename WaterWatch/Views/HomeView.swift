@@ -16,7 +16,6 @@ struct HomeView: View {
     @State var percent: CGFloat = 0
     
     @State var waterInfo: WaterInfo = WaterInfo()
-
     @AppStorage("Water", store: UserDefaults(suiteName: "group.coding.WaterWatch"))
     var waterData: Data = Data()
     
