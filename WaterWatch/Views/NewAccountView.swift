@@ -10,7 +10,7 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 
-struct SurveyView: View {
+struct NewAccountView: View {
     
     @EnvironmentObject var userInfo: UserInfo
     @StateObject var data = FetchData()
@@ -33,7 +33,7 @@ struct SurveyView: View {
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
                         .shadow(radius: 10.0, x: 20, y: 10)
-                        .padding(.top, 100)
+                        .padding(.top, 25)
                         .padding(.bottom, 20)
                     
                     // weight
@@ -261,8 +261,9 @@ struct SurveyView: View {
                             userInfo.gender = 2
                         }
                         updateWater()
+                        viewState = .home
                     }, label: {
-                        Text("Save Settings")
+                        Text("Create Account")
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding()
@@ -270,13 +271,11 @@ struct SurveyView: View {
                             .background(Color.green)
                             .cornerRadius(15.0)
                             .shadow(radius: 10.0, x: 20, y: 10)
-                    }).padding(.bottom, 250)
+                    }).padding(.bottom, 150)
                 }
             }
         }.edgesIgnoringSafeArea(.top)
-            .task {
-            await data.getData()
-        }
+        
     }
     
     func updateWater() {
@@ -345,8 +344,8 @@ struct SurveyView: View {
     }
 }
 
-struct SurveyView_Previews: PreviewProvider {
+struct NewAccountView_Previews: PreviewProvider {
     static var previews: some View {
-        SurveyView(viewState: Binding.constant(.survey))
+        NewAccountView(viewState: Binding.constant(.newaccount))
     }
 }

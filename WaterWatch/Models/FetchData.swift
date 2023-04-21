@@ -24,20 +24,16 @@ class FetchData: ObservableObject{
             let response = try JSONDecoder().decode(Response.self, from: data)
             self.response = response
             
-        } catch {
-            print(error)
+        }
+        catch {
+//            print(error)
         }
     }
 }
 struct Response: Codable{
- //   var location: Location = Location()
     var current: Current = Current()
 }
-//struct Location: Codable{
-//    var name: String = ""
-//    var region: String = ""
-//    var country: String  = ""
-//}
+
 struct Current: Codable{
     var temp_f: Double = 0.0
     var humidity: Int = 0
