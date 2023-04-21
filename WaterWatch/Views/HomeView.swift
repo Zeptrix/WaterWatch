@@ -13,7 +13,6 @@ struct HomeView: View {
     @EnvironmentObject var userInfo: UserInfo
     @Binding var viewState: ViewState
     @State var percent: CGFloat = 0
-    var firstTime = true
     
     var body: some View {
         ZStack {
