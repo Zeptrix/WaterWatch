@@ -19,7 +19,7 @@ struct WaterProvider: TimelineProvider {
     var waterData: Data = Data()
     
     func placeholder(in context: Context) -> WaterEntry {
-        return WaterEntry(date: Date(), waterInfo: WaterInfo(amountDrank: 0, totalWater: 0, waterPercent: 0, id: ""))
+        return WaterEntry(date: Date(), waterInfo: WaterInfo(amountDrank: 0, totalWater: 350, waterPercent: 0, id: ""))
     }
     
     func getSnapshot(in context: Context, completion: @escaping (WaterEntry) -> Void) {
@@ -53,7 +53,7 @@ struct WaterWidgetView: View {
                 }
                 Spacer()
             }.padding()
-        }.background(LinearGradient(gradient: Gradient(colors: [.blue]), startPoint: .top, endPoint: .bottom))
+        }.background(LinearGradient(gradient: Gradient(colors: [.blue, .indigo]), startPoint: .top, endPoint: .bottom))
     }
     
 }
@@ -68,7 +68,7 @@ struct WaterWidget: Widget {
         }
         .configurationDisplayName("WaterWidget")
         .description("Shows the user amount of water that they drank")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemMedium])
     }
 }
 

@@ -17,7 +17,6 @@ struct HomeView: View {
 
     
     @State var waterInfo: WaterInfo = WaterInfo()
-
     @AppStorage("Water", store: UserDefaults(suiteName: "group.coding.WaterWatch"))
     var waterData: Data = Data()
     
