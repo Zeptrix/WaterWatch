@@ -9,7 +9,14 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 
-class UserInfo: ObservableObject {
+class UserInfo: ObservableObject, Identifiable, Codable {
+    
+    enum CodingKeys: CodingKey{
+        case id, username, password, loggedIn, totalWater, amountDrank, drinkSize, age, weight, activity, gender, remindersPerDay, percent
+    }
+    
+    @Published var id: String
+    @Published var percent: Double
     @Published var username: String
     @Published var password: String
     @Published var loggedIn: Bool = false
@@ -22,7 +29,7 @@ class UserInfo: ObservableObject {
     @Published var activity: Double
     @Published var gender: Double
     @Published var remindersPerDay: Double
-
+    
     var dictionary: [String: Double]{
         ["totalWater": totalWater,
          "amountDrank": amountDrank,
@@ -34,10 +41,12 @@ class UserInfo: ObservableObject {
          "remindersPerDay": remindersPerDay]
     }
     
-    init(username: String = "", password: String = "", age: Double = 0.0, weight: Double = 0.0, activity: Double = 0.0, gender: Double = 0.0, totalWater: Double = 250.0, amountDrank: Double = 0.0, drinkSize: Double = 50.0, remindersPerDay: Double = 1440.0){
+    init(username: String = "", password: String = "", age: Double = 0.0, weight: Double = 0.0, activity: Double = 0.0, gender: Double = 0.0, totalWater: Double = 300.0, amountDrank: Double = 0.0, drinkSize: Double = 10.0, remindersPerDay: Double = 1440.0, id: String = "", percent: Double = 0.0){
+        self.id = id
         self.username = username
         self.password = password
         
+        self.percent = percent
         self.age = age
         self.weight = weight
         self.activity = activity
@@ -80,5 +89,48 @@ class UserInfo: ObservableObject {
                 self.remindersPerDay = rm
             }
         })
+        
     }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(id, forKey: .id)
+        try container.encode(username, forKey: .username)
+        try container.encode(password, forKey: .password)
+        try container.encode(loggedIn, forKey: .loggedIn)
+        try container.encode(totalWater, forKey: .totalWater)
+        try container.encode(amountDrank, forKey: .amountDrank)
+        try container.encode(drinkSize, forKey: .drinkSize)
+        try container.encode(age, forKey: .age)
+        try container.encode(weight, forKey: .weight)
+        try container.encode(activity, forKey: .activity)
+        try container.encode(gender, forKey: .gender)
+        try container.encode(remindersPerDay, forKey: .remindersPerDay)
+        try container.encode(percent, forKey: .percent)
+    }
+    
+    
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        id = try container.decode(String.self, forKey: .id)
+        username = try container.decode(String.self, forKey: .username)
+        password = try container.decode(String.self, forKey: .password)
+        loggedIn = try container.decode(Bool.self, forKey: .loggedIn)
+        totalWater = try container.decode(Double.self, forKey: .totalWater)
+        amountDrank = try container.decode(Double.self, forKey: .amountDrank)
+        drinkSize = try container.decode(Double.self, forKey: .drinkSize)
+        age = try container.decode(Double.self, forKey: .age)
+        weight = try container.decode(Double.self, forKey: .weight)
+        activity = try container.decode(Double.self, forKey: .activity)
+        gender = try container.decode(Double.self, forKey: .gender)
+        remindersPerDay = try container.decode(Double.self, forKey: .remindersPerDay)
+        percent = try container.decode(Double.self, forKey: .percent)
+        
+    }
+    
 }
+
+

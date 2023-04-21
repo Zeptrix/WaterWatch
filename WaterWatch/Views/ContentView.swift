@@ -18,7 +18,11 @@ struct ContentView: View {
     @EnvironmentObject var userInfo: UserInfo
     @State private var tabSelected: Tab = .house
     
+    
     var body: some View {
+        
+        HomeView(viewState: Binding.constant(.home))
+        /*
         if viewState == .authentication && !userInfo.loggedIn {
             AuthenticationView(viewState: $viewState)
         } else if viewState == .login && !userInfo.loggedIn {
@@ -46,6 +50,7 @@ struct ContentView: View {
                 }
             }
         }
+        */
     }
 }
 
