@@ -49,10 +49,11 @@ struct SignUpView: View {
                     Auth.auth().createUser(withEmail: userInfo.username, password: userInfo.password) {user, error in
                         if let _ = user {
                             userInfo.loggedIn = true
-                            viewState = .survey
-                        } else {
-                            print(error.debugDescription)
+                            viewState = .newaccount
                         }
+//                        else {
+//                            print(error.debugDescription)
+//                        }
                     }
                 }) {
                     Text("Sign Up")

@@ -109,6 +109,14 @@ struct HomeView: View {
                 }
                 Spacer()
             }
+        }.onAppear {
+            if(userInfo.age == 0) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    percent = CGFloat(Double(userInfo.amountDrank) / Double(userInfo.totalWater)) * 100
+                }
+            } else {
+                percent = CGFloat(Double(userInfo.amountDrank) / Double(userInfo.totalWater)) * 100
+            }
         }
         
        

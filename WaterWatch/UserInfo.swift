@@ -4,6 +4,7 @@
 //
 //  Created by Nathan Aronson (student LM) on 3/2/23.
 //
+
 import Foundation
 import FirebaseAuth
 import FirebaseDatabase
@@ -30,7 +31,7 @@ class UserInfo: ObservableObject, Identifiable, Codable {
     @Published var gender: Double
     @Published var remindersPerDay: Double
     
-    var dictionary: [String: Double]{
+    var dictionary: [String: Double] {
         ["totalWater": totalWater,
          "amountDrank": amountDrank,
          "drinkSize": drinkSize,
@@ -55,7 +56,7 @@ class UserInfo: ObservableObject, Identifiable, Codable {
         self.amountDrank = amountDrank
         self.drinkSize = drinkSize
         self.remindersPerDay = remindersPerDay
-        
+                
         Auth.auth().addStateDidChangeListener { _, user in
             guard let user = user else {return}
             
@@ -63,30 +64,55 @@ class UserInfo: ObservableObject, Identifiable, Codable {
             self.loggedIn = true
         }
         
+        readData()
+    }
+    
+    func readData() {
         guard let uid = Auth.auth().currentUser?.uid else {return}
-        
-        let database = Database.database().reference()
-        
-        database.child("users/\(uid)").setValue(dictionary)
-        
-        database.child("users/\(uid)").observeSingleEvent(of: .value, with: { snapshot in
-            guard let value = snapshot.value as? [String: Double] else {return}
-            if let t = value["totalWater"]{
-                self.totalWater = t}
-            if let am = value["amountDrank"]{
-                self.amountDrank = am}
-            if let ds = value["drinkSize"]{
-                self.drinkSize = ds}
-            if let ag = value["age"]{
-                self.age = ag}
-            if let w = value["weight"]{
-                self.weight = w}
-            if let ac = value["activity"]{
-                self.activity = ac}
-            if let g = value["gender"]{
-                self.gender = g}
-            if let rm = value["remindersPerDay"]{
-                self.remindersPerDay = rm
+        let rootRef = Database.database().reference()
+
+        rootRef.child("users/\(uid)").observe(.value, with : {(snapshot) in
+            if snapshot != nil {
+                if snapshot.hasChild("activity") {
+                    let activity = snapshot.childSnapshot(forPath: "activity").value as! Double
+                    self.activity = activity
+                    print(activity)
+                }
+                if snapshot.hasChild("age") {
+                    let age = snapshot.childSnapshot(forPath: "age").value as! Double
+                    self.age = age
+                    print(age)
+                }
+                if snapshot.hasChild("amountDrank") {
+                    let amountDrank = snapshot.childSnapshot(forPath: "amountDrank").value as! Double
+                    self.amountDrank = amountDrank
+                    print(amountDrank)
+                }
+                if snapshot.hasChild("drinkSize") {
+                    let drinkSize = snapshot.childSnapshot(forPath: "drinkSize").value as! Double
+                    self.drinkSize = drinkSize
+                    print(drinkSize)
+                }
+                if snapshot.hasChild("gender") {
+                    let gender = snapshot.childSnapshot(forPath: "gender").value as! Double
+                    self.gender = gender
+                    print(gender)
+                }
+                if snapshot.hasChild("remindersPerDay") {
+                    let remindersPerDay = snapshot.childSnapshot(forPath: "remindersPerDay").value as! Double
+                    self.remindersPerDay = remindersPerDay
+                    print(remindersPerDay)
+                }
+                if snapshot.hasChild("totalWater") {
+                    let totalWater = snapshot.childSnapshot(forPath: "totalWater").value as! Double
+                    self.totalWater = totalWater
+                    print(totalWater)
+                }
+                if snapshot.hasChild("weight") {
+                    let weight = snapshot.childSnapshot(forPath: "weight").value as! Double
+                    self.weight = weight
+                    print(weight)
+                }
             }
         })
         
