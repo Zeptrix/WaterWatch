@@ -23,7 +23,6 @@ struct WaveSlider: View {
     
     var body: some View {
         ZStack {
-            
             Capsule()
                 .stroke(lineWidth: 10)
                 .fill(Color.white)
@@ -39,7 +38,6 @@ struct WaveSlider: View {
                         if self.progress > 1 {self.progress = 1.0}
                         userInfo.drinkSize = self.progress * userInfo.totalWater / 3
                 }))
-            
                 .clipShape(Capsule())
                 .onAppear(){
                     withAnimation(Animation.linear(duration: 2).repeatForever(autoreverses: false)){

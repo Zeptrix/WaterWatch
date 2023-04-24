@@ -31,16 +31,6 @@
 		CDD596A62C28CBDDED62376B /* Pods_WaterWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 293B6BC40116789C39E08D3B /* Pods_WaterWatch.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		489534D529CDD90B00730177 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66531D9B29B0F0E2009AA66B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 489534C629CDD90800730177;
-			remoteInfo = WaterWatchWidgetExtension;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		489534D829CDD90C00730177 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -83,13 +73,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		489534C429CDD90800730177 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		66531DA029B0F0E2009AA66B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,13 +91,6 @@
 				140D06774E21C4F1D5AFD2B4 /* Pods-WaterWatch.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		489534CC29CDD90800730177 /* WaterWatchWidget */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WaterWatchWidget;
 			sourceTree = "<group>";
 		};
 		61FE6EF625266D4DD74EBCCB /* Frameworks */ = {
@@ -136,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				66531DA529B0F0E2009AA66B /* WaterWatch */,
-				489534CC29CDD90800730177 /* WaterWatchWidget */,
 				66531DA429B0F0E2009AA66B /* Products */,
 				059B1C486AD7F7619276C2CF /* Pods */,
 				61FE6EF625266D4DD74EBCCB /* Frameworks */,
@@ -215,22 +190,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		489534C629CDD90800730177 /* WaterWatchWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 489534DB29CDD90C00730177 /* Build configuration list for PBXNativeTarget "WaterWatchWidgetExtension" */;
-			buildPhases = (
-				489534C329CDD90800730177 /* Sources */,
-				489534C429CDD90800730177 /* Frameworks */,
-				489534C529CDD90800730177 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = WaterWatchWidgetExtension;
-			productName = WaterWatchWidgetExtension;
-			productType = "com.apple.product-type.app-extension";
-		};
 		66531DA229B0F0E2009AA66B /* WaterWatch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66531DB129B0F0E4009AA66B /* Build configuration list for PBXNativeTarget "WaterWatch" */;
@@ -245,7 +204,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				489534D629CDD90B00730177 /* PBXTargetDependency */,
 			);
 			name = WaterWatch;
 			productName = WaterWatch;
@@ -262,9 +220,6 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					489534C629CDD90800730177 = {
-						CreatedOnToolsVersion = 13.4.1;
-					};
 					66531DA229B0F0E2009AA66B = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -284,19 +239,11 @@
 			projectRoot = "";
 			targets = (
 				66531DA229B0F0E2009AA66B /* WaterWatch */,
-				489534C629CDD90800730177 /* WaterWatchWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		489534C529CDD90800730177 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		66531DA129B0F0E2009AA66B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -352,13 +299,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		489534C329CDD90800730177 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		66531D9F29B0F0E2009AA66B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,69 +326,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		489534D629CDD90B00730177 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 489534C629CDD90800730177 /* WaterWatchWidgetExtension */;
-			targetProxy = 489534D529CDD90B00730177 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		489534D929CDD90C00730177 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 84W8MQ4ZH9;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WaterWatchWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WaterWatchWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = coding.WaterWatch.WaterWatchWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		489534DA29CDD90C00730177 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 84W8MQ4ZH9;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WaterWatchWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WaterWatchWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = coding.WaterWatch.WaterWatchWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		66531DAF29B0F0E4009AA66B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -628,15 +506,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		489534DB29CDD90C00730177 /* Build configuration list for PBXNativeTarget "WaterWatchWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				489534D929CDD90C00730177 /* Debug */,
-				489534DA29CDD90C00730177 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		66531D9E29B0F0E2009AA66B /* Build configuration list for PBXProject "WaterWatch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

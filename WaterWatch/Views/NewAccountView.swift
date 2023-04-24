@@ -1,8 +1,8 @@
 //
-//  SurveryView.swift
+//  NewAccountView.swift
 //  WaterWatch
 //
-//  Created by Ori Orbach (student LM) on 3/8/23.
+//  Created by Nathan Aronson (student LM) on 4/20/23.
 //
 import SwiftUI
 import Foundation
